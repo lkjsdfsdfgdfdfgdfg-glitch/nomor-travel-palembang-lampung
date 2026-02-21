@@ -1,0 +1,1298 @@
+<html lang="id"><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/content/location/location.js" id="eppiocemhmnlbhjplcgkofciiegomcon"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/extend-native-history-api.js"></script><script src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/libs/requests.js"></script><head><style type="text/css">.tippy-iOS{cursor:pointer!important}.tippy-notransition{transition:none!important}.tippy-popper{-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none;line-height:1.4;max-width:calc(100% - 10px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:8px solid #333;border-right:8px solid transparent;border-left:8px solid transparent;bottom:-7px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 25%;transform-origin:0 25%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-55%);transform:scale(1) translate(-50%,-55%)}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-50%,-45%);transform:scale(.2) translate(-50%,-45%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px)}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(60deg);transform:translateY(0) rotateX(60deg)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(.5);transform:translateY(0) scale(.5)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:8px solid #333;border-right:8px solid transparent;border-left:8px solid transparent;top:-7px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -50%;transform-origin:0 -50%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-45%);transform:scale(1) translate(-50%,-45%)}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-50%);transform:scale(.2) translate(-50%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(-60deg);transform:translateY(0) rotateX(-60deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(.5);transform:translateY(0) scale(.5)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:50% 0 0 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:8px solid #333;border-top:8px solid transparent;border-bottom:8px solid transparent;right:-7px;margin:3px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%)}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-75%,-50%);transform:scale(.2) translate(-75%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px)}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(-60deg);transform:translateX(0) rotateY(-60deg)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(.5);transform:translateX(0) scale(.5)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 50% 50% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:8px solid #333;border-top:8px solid transparent;border-bottom:8px solid transparent;left:-7px;margin:3px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-50% 0;transform-origin:-50% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(1) translate(-50%,-50%);transform:scale(1) translate(-50%,-50%)}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(.2) translate(-25%,-50%);transform:scale(.2) translate(-25%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px)}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(60deg);transform:translateX(0) rotateY(60deg)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(.5);transform:translateX(0) scale(.5)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;max-width:350px;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-size=small]{padding:.2rem .4rem;font-size:.75rem}.tippy-tooltip[data-size=large]{padding:.4rem .8rem;font-size:1rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-interactive],.tippy-tooltip[data-interactive] path{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:calc(110% + 2rem);left:50%;top:50%;z-index:-1;transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}.tippy-backdrop+.tippy-content{transition-property:opacity;will-change:opacity}.tippy-backdrop+.tippy-content[data-state=visible]{opacity:1}.tippy-backdrop+.tippy-content[data-state=hidden]{opacity:0}</style>
+	<meta charset="UTF-8">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.6 (Yoast SEO v23.5) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA</title>
+	<meta name="description" content="Adefa Trans merupakan solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang pesan 082186825348 telp atau WA">
+	<link rel="canonical" href="https://adefatrans.com/travel-palembang-lampung/">
+	<meta property="og:locale" content="id_ID">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA">
+	<meta property="og:description" content="Adefa Trans merupakan solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang pesan 082186825348 telp atau WA">
+	<meta property="og:url" content="https://adefatrans.com/travel-palembang-lampung/">
+	<meta property="og:site_name" content="Adefa Trans">
+	<meta property="article:publisher" content="https://www.facebook.com/adefatrans">
+	<meta property="article:published_time" content="2022-02-28T07:15:10+00:00">
+	<meta property="article:modified_time" content="2024-07-25T12:12:07+00:00">
+	<meta property="og:image" content="https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png">
+	<meta property="og:image:width" content="350">
+	<meta property="og:image:height" content="452">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="Adefa Trans">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Ditulis oleh">
+	<meta name="twitter:data1" content="Adefa Trans">
+	<meta name="twitter:label2" content="Estimasi waktu membaca">
+	<meta name="twitter:data2" content="7 menit">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://adefatrans.com/travel-palembang-lampung/#article","isPartOf":{"@id":"https://adefatrans.com/travel-palembang-lampung/"},"author":{"name":"Adefa Trans","@id":"https://adefatrans.com/#/schema/person/73cf44d94e1339cbfae407ecda5e7cb2"},"headline":"Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA","datePublished":"2022-02-28T07:15:10+00:00","dateModified":"2024-07-25T12:12:07+00:00","mainEntityOfPage":{"@id":"https://adefatrans.com/travel-palembang-lampung/"},"wordCount":934,"commentCount":7,"publisher":{"@id":"https://adefatrans.com/#organization"},"image":{"@id":"https://adefatrans.com/travel-palembang-lampung/#primaryimage"},"thumbnailUrl":"https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png","articleSection":["Carter","Travel","Travel Lampung Jambi Via Tol","Travel Lampung Palembang","Travel Lampung Palembang Lewat Tol","Travel Palembang","Travel Palembang Lampung Via Tol"],"inLanguage":"id","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://adefatrans.com/travel-palembang-lampung/#respond"]}]},{"@type":"WebPage","@id":"https://adefatrans.com/travel-palembang-lampung/","url":"https://adefatrans.com/travel-palembang-lampung/","name":"Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA","isPartOf":{"@id":"https://adefatrans.com/#website"},"primaryImageOfPage":{"@id":"https://adefatrans.com/travel-palembang-lampung/#primaryimage"},"image":{"@id":"https://adefatrans.com/travel-palembang-lampung/#primaryimage"},"thumbnailUrl":"https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png","datePublished":"2022-02-28T07:15:10+00:00","dateModified":"2024-07-25T12:12:07+00:00","description":"Adefa Trans merupakan solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang pesan 082186825348 telp atau WA","breadcrumb":{"@id":"https://adefatrans.com/travel-palembang-lampung/#breadcrumb"},"inLanguage":"id","potentialAction":[{"@type":"ReadAction","target":["https://adefatrans.com/travel-palembang-lampung/"]}]},{"@type":"ImageObject","inLanguage":"id","@id":"https://adefatrans.com/travel-palembang-lampung/#primaryimage","url":"https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png","contentUrl":"https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png","width":350,"height":452},{"@type":"BreadcrumbList","@id":"https://adefatrans.com/travel-palembang-lampung/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://adefatrans.com/"},{"@type":"ListItem","position":2,"name":"Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA"}]},{"@type":"WebSite","@id":"https://adefatrans.com/#website","url":"https://adefatrans.com/","name":"Adefa Trans","description":"Travel, Rent Car, dan Paket Barang","publisher":{"@id":"https://adefatrans.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://adefatrans.com/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"id"},{"@type":"Organization","@id":"https://adefatrans.com/#organization","name":"Adefa Trans","url":"https://adefatrans.com/","logo":{"@type":"ImageObject","inLanguage":"id","@id":"https://adefatrans.com/#/schema/logo/image/","url":"https://adefatrans.com/wp-content/uploads/2020/06/adefa-trans-logo.png","contentUrl":"https://adefatrans.com/wp-content/uploads/2020/06/adefa-trans-logo.png","width":325,"height":98,"caption":"Adefa Trans"},"image":{"@id":"https://adefatrans.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/adefatrans","https://www.instagram.com/adefa_trans/","https://www.linkedin.com/in/adefa-trans-351a9a180/","https://id.pinterest.com/adefatrans/","https://www.youtube.com/channel/UCgpJnY0VYI87oIND7Oh1yUA"]},{"@type":"Person","@id":"https://adefatrans.com/#/schema/person/73cf44d94e1339cbfae407ecda5e7cb2","name":"Adefa Trans","image":{"@type":"ImageObject","inLanguage":"id","@id":"https://adefatrans.com/#/schema/person/image/","url":"https://secure.gravatar.com/avatar/938c00b78f7ea4008e76c4d1d91b5ae4?s=96&d=wavatar&r=g","contentUrl":"https://secure.gravatar.com/avatar/938c00b78f7ea4008e76c4d1d91b5ae4?s=96&d=wavatar&r=g","caption":"Adefa Trans"},"description":"Adefa Trans, jasa transportasi terpercaya dengan layanan travel antar kota, carter, rent car, dan paket barang","sameAs":["https://adefatrans.com/"]},false]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="alternate" type="application/rss+xml" title="Adefa Trans » Feed" href="https://adefatrans.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Adefa Trans » Umpan Komentar" href="https://adefatrans.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Adefa Trans » Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA Umpan Komentar" href="https://adefatrans.com/travel-palembang-lampung/feed/">
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.26.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-14QYR20KJ3" data-cfasync="false" data-wpfc-render="false" async=""></script>
+			<script data-cfasync="false" data-wpfc-render="false">
+				var mi_version = '8.26.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/adefatrans.com\/travel-palembang-lampung\/"};
+				if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-14QYR20KJ3',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-14QYR20KJ3', {"forceSSL":"true","link_attribution":"true"} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<link rel="stylesheet" id="wpjoli-joli-faq-seo-styles-css" href="https://adefatrans.com/wp-content/plugins/joli-faq-seo/assets/public/css/wpjoli-joli-faq-seo.min.css?ver=1.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="https://adefatrans.com/wp-includes/css/dist/block-library/style.min.css?ver=6.4.7" media="all">
+<style id="wpjoli-joli-faq-group-style-inline-css">
+
+
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--contrast: var(--contrast);--wp--preset--color--contrast-2: var(--contrast-2);--wp--preset--color--contrast-3: var(--contrast-3);--wp--preset--color--base: var(--base);--wp--preset--color--base-2: var(--base-2);--wp--preset--color--base-3: var(--base-3);--wp--preset--color--accent: var(--accent);--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel="stylesheet" id="dashicons-css" href="https://adefatrans.com/wp-content/cache/min/1/wp-includes/css/dashicons.min.css?ver=1759889442" media="all">
+<link rel="stylesheet" id="ez-toc-css" href="https://adefatrans.com/wp-content/plugins/easy-table-of-contents/assets/css/screen.min.css?ver=2.0.80" media="all">
+<style id="ez-toc-inline-css">
+div#ez-toc-container .ez-toc-title {font-size: 120%;}div#ez-toc-container .ez-toc-title {font-weight: 500;}div#ez-toc-container ul li , div#ez-toc-container ul li a {font-size: 95%;}div#ez-toc-container ul li , div#ez-toc-container ul li a {font-weight: 500;}div#ez-toc-container nav ul ul li {font-size: 90%;}.ez-toc-box-title {font-weight: bold; margin-bottom: 10px; text-align: center; text-transform: uppercase; letter-spacing: 1px; color: #666; padding-bottom: 5px;position:absolute;top:-4%;left:5%;background-color: inherit;transition: top 0.3s ease;}.ez-toc-box-title.toc-closed {top:-25%;}
+.ez-toc-container-direction {direction: ltr;}.ez-toc-counter ul{counter-reset: item ;}.ez-toc-counter nav ul li a::before {content: counters(item, '.', decimal) '. ';display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left; }.ez-toc-widget-direction {direction: ltr;}.ez-toc-widget-container ul{counter-reset: item ;}.ez-toc-widget-container nav ul li a::before {content: counters(item, '.', decimal) '. ';display: inline-block;counter-increment: item;flex-grow: 0;flex-shrink: 0;margin-right: .2em; float: left; }
+</style>
+<link rel="stylesheet" id="generate-comments-css" href="https://adefatrans.com/wp-content/themes/generatepress/assets/css/components/comments.min.css?ver=3.1.3" media="all">
+<link rel="stylesheet" id="generate-widget-areas-css" href="https://adefatrans.com/wp-content/themes/generatepress/assets/css/components/widget-areas.min.css?ver=3.1.3" media="all">
+<link rel="stylesheet" id="generate-style-css" href="https://adefatrans.com/wp-content/themes/generatepress/assets/css/main.min.css?ver=3.1.3" media="all">
+<style id="generate-style-inline-css">
+body{background-color:var(--base-2);color:var(--contrast);}a{color:var(--accent);}a{text-decoration:underline;}.entry-title a, .site-branding a, a.button, .wp-block-button__link, .main-navigation a{text-decoration:none;}a:hover, a:focus, a:active{color:var(--contrast);}.wp-block-group__inner-container{max-width:1200px;margin-left:auto;margin-right:auto;}.site-header .header-image{width:190px;}:root{--contrast:#222222;--contrast-2:#575760;--contrast-3:#b2b2be;--base:#f0f0f0;--base-2:#f7f8f9;--base-3:#ffffff;--accent:#1e73be;}.has-contrast-color{color:#222222;}.has-contrast-background-color{background-color:#222222;}.has-contrast-2-color{color:#575760;}.has-contrast-2-background-color{background-color:#575760;}.has-contrast-3-color{color:#b2b2be;}.has-contrast-3-background-color{background-color:#b2b2be;}.has-base-color{color:#f0f0f0;}.has-base-background-color{background-color:#f0f0f0;}.has-base-2-color{color:#f7f8f9;}.has-base-2-background-color{background-color:#f7f8f9;}.has-base-3-color{color:#ffffff;}.has-base-3-background-color{background-color:#ffffff;}.has-accent-color{color:#1e73be;}.has-accent-background-color{background-color:#1e73be;}.top-bar{background-color:#636363;color:#ffffff;}.top-bar a{color:#ffffff;}.top-bar a:hover{color:#303030;}.site-header{background-color:var(--base-3);}.main-title a,.main-title a:hover{color:var(--contrast);}.site-description{color:var(--contrast-2);}.mobile-menu-control-wrapper .menu-toggle,.mobile-menu-control-wrapper .menu-toggle:hover,.mobile-menu-control-wrapper .menu-toggle:focus,.has-inline-mobile-toggle #site-navigation.toggled{background-color:rgba(0, 0, 0, 0.02);}.main-navigation,.main-navigation ul ul{background-color:var(--base-3);}.main-navigation .main-nav ul li a, .main-navigation .menu-toggle, .main-navigation .menu-bar-items{color:var(--contrast);}.main-navigation .main-nav ul li:not([class*="current-menu-"]):hover > a, .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus > a, .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"]) > a, .main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{color:var(--accent);}button.menu-toggle:hover,button.menu-toggle:focus{color:var(--contrast);}.main-navigation .main-nav ul li[class*="current-menu-"] > a{color:var(--accent);}.navigation-search input[type="search"],.navigation-search input[type="search"]:active, .navigation-search input[type="search"]:focus, .main-navigation .main-nav ul li.search-item.active > a, .main-navigation .menu-bar-items .search-item.active > a{color:var(--accent);}.main-navigation ul ul{background-color:var(--base);}.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .one-container .container, .separate-containers .paging-navigation, .inside-page-header{background-color:var(--base-3);}.entry-title a{color:var(--contrast);}.entry-title a:hover{color:var(--contrast-2);}.entry-meta{color:var(--contrast-2);}.sidebar .widget{background-color:var(--base-3);}.footer-widgets{background-color:var(--base-3);}.site-info{background-color:var(--base-3);}input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"],input[type="number"],textarea,select{color:var(--contrast);background-color:var(--base-2);border-color:var(--base);}input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="number"]:focus,textarea:focus,select:focus{color:var(--contrast);background-color:var(--base-2);border-color:var(--contrast-3);}button,html input[type="button"],input[type="reset"],input[type="submit"],a.button,a.wp-block-button__link:not(.has-background){color:#ffffff;background-color:#55555e;}button:hover,html input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,a.button:hover,button:focus,html input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus,a.button:focus,a.wp-block-button__link:not(.has-background):active,a.wp-block-button__link:not(.has-background):focus,a.wp-block-button__link:not(.has-background):hover{color:#ffffff;background-color:#3f4047;}a.generate-back-to-top{background-color:rgba( 0,0,0,0.4 );color:#ffffff;}a.generate-back-to-top:hover,a.generate-back-to-top:focus{background-color:rgba( 0,0,0,0.6 );color:#ffffff;}@media (max-width:768px){.main-navigation .menu-bar-item:hover > a, .main-navigation .menu-bar-item.sfHover > a{background:none;color:var(--contrast);}}.nav-below-header .main-navigation .inside-navigation.grid-container, .nav-above-header .main-navigation .inside-navigation.grid-container{padding:0px 20px 0px 20px;}.site-main .wp-block-group__inner-container{padding:40px;}.separate-containers .paging-navigation{padding-top:20px;padding-bottom:20px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-40px;width:calc(100% + 80px);max-width:calc(100% + 80px);}.rtl .menu-item-has-children .dropdown-menu-toggle{padding-left:20px;}.rtl .main-navigation .main-nav ul li.menu-item-has-children > a{padding-right:20px;}@media (max-width:768px){.separate-containers .inside-article, .separate-containers .comments-area, .separate-containers .page-header, .separate-containers .paging-navigation, .one-container .site-content, .inside-page-header{padding:30px;}.site-main .wp-block-group__inner-container{padding:30px;}.inside-top-bar{padding-right:30px;padding-left:30px;}.inside-header{padding-right:30px;padding-left:30px;}.widget-area .widget{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.footer-widgets-container{padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;}.inside-site-info{padding-right:30px;padding-left:30px;}.entry-content .alignwide, body:not(.no-sidebar) .entry-content .alignfull{margin-left:-30px;width:calc(100% + 60px);max-width:calc(100% + 60px);}.one-container .site-main .paging-navigation{margin-bottom:20px;}}/* End cached CSS */.is-right-sidebar{width:30%;}.is-left-sidebar{width:30%;}.site-content .content-area{width:70%;}@media (max-width:768px){.main-navigation .menu-toggle,.sidebar-nav-mobile:not(#sticky-placeholder){display:block;}.main-navigation ul,.gen-sidebar-nav,.main-navigation:not(.slideout-navigation):not(.toggled) .main-nav > ul,.has-inline-mobile-toggle #site-navigation .inside-navigation > *:not(.navigation-search):not(.main-nav){display:none;}.nav-align-right .inside-navigation,.nav-align-center .inside-navigation{justify-content:space-between;}.has-inline-mobile-toggle .mobile-menu-control-wrapper{display:flex;flex-wrap:wrap;}.has-inline-mobile-toggle .inside-header{flex-direction:row;text-align:left;flex-wrap:wrap;}.has-inline-mobile-toggle .header-widget,.has-inline-mobile-toggle #site-navigation{flex-basis:100%;}.nav-float-left .has-inline-mobile-toggle #site-navigation{order:10;}}
+.elementor-template-full-width .site-content{display:block;}
+</style>
+<script src="https://adefatrans.com/wp-content/plugins/google-analytics-premium/assets/js/frontend-gtag.min.js?ver=8.26.0" id="monsterinsights-frontend-script-js"></script>
+<script data-cfasync="false" data-wpfc-render="false" id="monsterinsights-frontend-script-js-extra">var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/adefatrans.com","hash_tracking":"false","v4_id":"G-14QYR20KJ3"};</script>
+
+<!-- Snippet Google Analytics telah ditambahkan oleh Site Kit -->
+<script src="https://www.googletagmanager.com/gtag/js?id=G-14QYR20KJ3" id="google_gtagjs-js" async=""></script>
+<script id="google_gtagjs-js-after">
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["adefatrans.com"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "G-14QYR20KJ3");
+</script>
+
+<!-- Snippet Google Analytics penutup telah ditambahkan oleh Site Kit -->
+<link rel="https://api.w.org/" href="https://adefatrans.com/wp-json/"><link rel="alternate" type="application/json" href="https://adefatrans.com/wp-json/wp/v2/posts/18"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://adefatrans.com/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.7">
+<link rel="shortlink" href="https://adefatrans.com/?p=18">
+<link rel="alternate" type="application/json+oembed" href="https://adefatrans.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fadefatrans.com%2Ftravel-palembang-lampung%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://adefatrans.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fadefatrans.com%2Ftravel-palembang-lampung%2F&amp;format=xml">
+<meta name="generator" content="Site Kit by Google 1.122.0"><!-- Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA","serviceType":"Travel","image":{"@type":"ImageObject","url":"https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png","width":350,"height":452},"provider":{"@type":"LocalBusiness","name":"Adefa Trans","image":{"@type":"ImageObject","url":"https://adefatrans.com/wp-content/uploads/2020/06/adefa-trans-logo.png","width":325,"height":98},"telephone":"+6282186825348","priceRange":"50000 - 200000","address":{"@type":"PostalAddress","addressLocality":"Bandar Lampung","addressRegion":"Lampung","streetAddress":"Jalan Adisucipto no.44, Tanjung Karang Timur"}},"areaServed":{"@type":"State","name":"Lampung, Palembang, Jakarta"},"description":"Adefa Trans merupakan layanan jasa transportasi yang menjadi solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang. Anda dapat pesan travel untuk jurusan ini dengan cara telepon atau WA ke nomor telepon 082186825348. Dengan layanan jemput dan antar alamat, driver kami siap menjemput dan mengantar hingga alamat tujuan. Hanya dengan tarif 250 ribu untuk via tol. Travel kami pun berangkat setiap  hari dengan jadwal reguler pagi dan malam.\r\n\r\n\r\n\r\nCV. Adefa Group dengan nama perusahaan Adefa Trans bergerak di bidang transportasi yang melayani travel antar jemput. Selain melayani travel Lampung Palembang PP kami juga melayani jurusan lain dari Arah Palembang yaitu menuju, terbanggi, Bandar Jaya, Metro, Tanjung Karang, Pringsewu, Berhen, Tanjung Bintang dan arah sebaliknya PP. Dengan jadwal yang komplit akan sangat membantu anda yang memiliki mobilitas antar kedua kota tersebut.\r\n\r\n\r\n\r\nNama\r\nAdefa Trans\r\n\r\n\r\nLoket\r\nJl. adisucipto &amp; jl.ksatria sukajaya sukarami\r\n\r\n\r\nPool\r\nJl. Ksatria,sukajaya,sukarami,palembang\r\n\r\n\r\nAlamat\r\nJl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung\r\n\r\n\r\nTelp\r\n082186825348\r\n\r\n\r\nWA\r\n082186825348\r\n\r\n\r\nHarga tiket\r\nRp. 250.000\r\n\r\n\r\nFasilitas\r\nAntar jemput, via Tol, AC, reclining seat\r\n\r\n\r\nArmada\r\nAvanza, Innova,\r\n\r\n\r\nRute\r\nPalembang, Indralaya, Kayuagug, terbanggi, Bandar jaya, Metro, Bandar lampung (Pringsewu - Tanjung Bintang - Berhen - Kalianda - Bakauheni)\r\n\r\n\r\nRute\r\n via Jalan Tol trans Sumatra\r\n\r\n\r\nWebsite\r\nadefatrans.com\r\n\r\n\r\n\r\nKami, Adefa Trans punya alamat kantor di Palembang dan di Bandar Lampung. Anda bisa mengunjungi alamat kantor kami baik untuk reservasi semua layanan kami. Karena selain melayani travel reguler, kami juga melayani charter, rental mobil, paket wisata, dan pengiriman barang/ dokumen.\r\n\r\n&nbsp;\r\nJadwal travel Palembang Lampung\r\nAdefa Trans merupakan travel reguler, jadi travel kami berangkat setiap hari. Kami melayani keberangkatan pagi dan malam dari setiap kota asal. Dengan ketersediaan dua jadwal ini, maka penumpang bisa pilih salah satu jadwal yang ada. Informasi lengkap jadwal travel kami antara lain ada di jam setengah sepuluh pagi dan jam tujuh malam.\r\n\r\nSehubungan travel melayani dengan antar jemput, maka tibanya kendaraan di tempat konsumen akan berbeda satu sama lain. Kami pada umumnya akan  menjemput penumpang dengan lokasi terjauh dulu baru menuju ke lokasi yang lebih dekat atau searah dengan jalan menuju ke kota tujuan. Agar lebih paham mengenai jadwal penjemputan yang sama dengan travel Palembang Bakauheni ini, berikut informasi lengkapnya.\r\n\r\n\r\n\r\n\r\ndari Palembang\r\n\r\ndari Lampung\r\n\r\n\r\n\r\n09.30\r\n\r\n09.30\r\n\r\n\r\n\r\n19.00\r\n\r\n19.00\r\n\r\n\r\n\r\nHarga tiket travel\r\nHarga tiket travel kami saat ini dari arah Bumi Sriwijaya mulai dari 250 ribu rupiah. Harga tiket tersebut sudah termasuk antar jemput penumpang dan perjalanan via jalan tol Trans Sumatera. Anda sudah tidak repot lagi mencari transportasi, cukup menunggu dirumah  kami akan menjemput anda dan kami antar ke alamat rumah tujuan. Inilah harga tiket kami secara lengkap.\r\n\r\n\r\n\r\nKota asal\r\nKota tujuan\r\nHarga tiket via tol\r\n\r\n\r\nPalembang\r\nBandarLampung\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol pematang\r\nRp. 200.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Way Kenanga\r\nRp. 200.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Lambu Kibang\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nBranti\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Menggala\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Gunumg Batin\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Terbanggi\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nBandar Jaya\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nWates\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nTegineneng\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nMetro Kota\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nNatar\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nPringsewu kota\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nBakauheni\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nKedondong\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nGading Rejo\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nPagelaran\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nBerhen\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nTanjung Bintang\r\nRp. 350.000\r\n\r\n\r\n\r\n\r\nUnit kendaraan\r\nAdefa Trans memiliki unit kendaraan yang baik dan terawat. Mobil kami siap untuk perjalanan luar kota. Kendaraan kami yaitu  Innova, Hiace, pada travel Palembang Lampung ini. Setiap kendaraan sudah kami tentukan kapasitasnya, jadi tidak ada overload penumpang. Untuk pemberangkatan armada kami rendom, sesuai dengan yang ready apa saat hari keberangkatan itu yang kami berangkat kan.\r\n\r\n\r\n\r\n\r\nArmada\r\n\r\nKapasitas\r\n\r\n\r\n\r\nAvanza\r\n\r\n6 orang\r\n\r\n\r\n\r\nInnova Reborn\r\n\r\n6/7 orang\r\n\r\n\r\n\r\nInnova Grand\r\n\r\n6/ 7 orang\r\n\r\n\r\n\r\nHiace\r\n\r\n12 orang\r\n\r\n\r\n\r\nNav 1\r\n\r\n6 / 7orang\r\n\r\n\r\n\r\nSetiap armada kami dikendarai oleh driver yang sudah berpengalaman di bidangnya, sehingga anda tidak perlu cemas dan  ragu dalam melakukan perjalanan bersama kami. Driver kami akan melayani perjalanan anda dengan semaksimal mungkin sampai di tempat tujuan dengan selamat.  Lalu untuk khusus yang charter, konsumen baru bisa memilih jenis armada yang di inginkan.\r\nArea penjemputan Palembang\r\nBerikut ini kami sertakan informasi mengenai Daerah penjemputan di Kota Palembang, agar konsumen mengetahui bahwa bisa dijemput apabila berada pada salah satu lokasi tersebut dibawah ini. List area jemput tersebut yaitu:\r\n\r\n \tKm 1 s/d km 12, Talang kelapa, Talang jambi, Talang betutu, Talang keramat, Kebun bunga, Sukabangun, Pakjo, Bukit, Demang lebar daun, Kenten, Sako, Pusri, Matamerah, Merah mata, Lemabang, Boom baru, Plaju, Nagaswidak, Tegal binangun, Jakabaring, Soekarno hatta, Musi 2, Gandus, Tangga buntung, Kertapati, Karyajaya Bandara palembang,\r\n\r\nArea pengantaran Bandar Lampung\r\nArea  antaran atau penjemputan di Kota Bandar Lampung bisa dikatakan cukup luas. Agar konsumen bisa memahami maka kami memberikan informasi daftar area jemput dan antar sebagaimana dibawah ini. Cukup sampaikan saja kepada kami saat booking.\r\n\r\n \tTeluk betung, Kota karang, Panjang, Garuntang, Pahoman, Tanjung gading, Tanjung karang, Kemiling, Gedong air, Kedaton, Wayhalim, Waykandis, Tanjung senang, Pasar jatimulyo, Korpri, Itera, Sukarame, Sukabumi, Campang, Kedamaian, Rajabasa, Hajimena, Natar, Branti\r\n\r\nOrder travel Palembang Lampung\r\nPemesanan travel di tempat kami sangatlah mudah. Kami melayani reservasi online. Anda cukup telepon atau WA ke kontak yang telah kami sediakan. Kami siap melayani anda selama 1 x 24 jam tentu dengan jadwal yang sudah ditentukan. Untuk pembayaran tiket pun sangat mudah, anda cukup membayar tiket melalui driver kami saat sudah penjemputan. Atau bisa juga melalui transfer antar bank dengan no rekening yang tercantum dalam Website kami.\r\n\r\n \t\r\n\r\n \tPool Jl. Ksatria sukajaya sukarami Palembang\r\n \tAlamat Jl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung\r\n \tTelp 082186825348\r\n \tWA 082186825348\r\n \tWeb: AdefaTrans.com\r\n\r\n\r\n\r\n\r\n\r\n\r\nTak perlu ragu lagi mencari travel Palembang Lampung dan arah sebaliknya di tempat kami. Adefa Trans memberikan fasilitas mobil ber AC. Kami siap menjadi mitra terbaik dalam perjalanan anda. Kami juga melayani charteran, sewa mobil, paket wisata, dan paket kilat pada jurusan ini, sehingga dapat dikatakan kami merupakan jasa transportasi yang tak hanya terpercaya, namun juga lengkap."}</script><!-- / Schema optimized by Schema Pro --><!-- Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA","image":{"@type":"ImageObject","url":"https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png","width":350,"height":452},"description":"Adefa Trans merupakan layanan jasa transportasi yang menjadi solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang. Anda dapat pesan travel untuk jurusan ini dengan cara telepon atau WA ke nomor telepon 082186825348. Dengan layanan jemput dan antar alamat, driver kami siap menjemput dan mengantar hingga alamat tujuan. Hanya dengan tarif 250 ribu untuk via tol. Travel kami pun berangkat setiap  hari dengan jadwal reguler pagi dan malam.\r\n\r\n\r\n\r\nCV. Adefa Group dengan nama perusahaan Adefa Trans bergerak di bidang transportasi yang melayani travel antar jemput. Selain melayani travel Lampung Palembang PP kami juga melayani jurusan lain dari Arah Palembang yaitu menuju, terbanggi, Bandar Jaya, Metro, Tanjung Karang, Pringsewu, Berhen, Tanjung Bintang dan arah sebaliknya PP. Dengan jadwal yang komplit akan sangat membantu anda yang memiliki mobilitas antar kedua kota tersebut.\r\n\r\n\r\n\r\nNama\r\nAdefa Trans\r\n\r\n\r\nLoket\r\nJl. adisucipto &amp; jl.ksatria sukajaya sukarami\r\n\r\n\r\nPool\r\nJl. Ksatria,sukajaya,sukarami,palembang\r\n\r\n\r\nAlamat\r\nJl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung\r\n\r\n\r\nTelp\r\n082186825348\r\n\r\n\r\nWA\r\n082186825348\r\n\r\n\r\nHarga tiket\r\nRp. 250.000\r\n\r\n\r\nFasilitas\r\nAntar jemput, via Tol, AC, reclining seat\r\n\r\n\r\nArmada\r\nAvanza, Innova,\r\n\r\n\r\nRute\r\nPalembang, Indralaya, Kayuagug, terbanggi, Bandar jaya, Metro, Bandar lampung (Pringsewu - Tanjung Bintang - Berhen - Kalianda - Bakauheni)\r\n\r\n\r\nRute\r\n via Jalan Tol trans Sumatra\r\n\r\n\r\nWebsite\r\nadefatrans.com\r\n\r\n\r\n\r\nKami, Adefa Trans punya alamat kantor di Palembang dan di Bandar Lampung. Anda bisa mengunjungi alamat kantor kami baik untuk reservasi semua layanan kami. Karena selain melayani travel reguler, kami juga melayani charter, rental mobil, paket wisata, dan pengiriman barang/ dokumen.\r\n\r\n&nbsp;\r\nJadwal travel Palembang Lampung\r\nAdefa Trans merupakan travel reguler, jadi travel kami berangkat setiap hari. Kami melayani keberangkatan pagi dan malam dari setiap kota asal. Dengan ketersediaan dua jadwal ini, maka penumpang bisa pilih salah satu jadwal yang ada. Informasi lengkap jadwal travel kami antara lain ada di jam setengah sepuluh pagi dan jam tujuh malam.\r\n\r\nSehubungan travel melayani dengan antar jemput, maka tibanya kendaraan di tempat konsumen akan berbeda satu sama lain. Kami pada umumnya akan  menjemput penumpang dengan lokasi terjauh dulu baru menuju ke lokasi yang lebih dekat atau searah dengan jalan menuju ke kota tujuan. Agar lebih paham mengenai jadwal penjemputan yang sama dengan travel Palembang Bakauheni ini, berikut informasi lengkapnya.\r\n\r\n\r\n\r\n\r\ndari Palembang\r\n\r\ndari Lampung\r\n\r\n\r\n\r\n09.30\r\n\r\n09.30\r\n\r\n\r\n\r\n19.00\r\n\r\n19.00\r\n\r\n\r\n\r\nHarga tiket travel\r\nHarga tiket travel kami saat ini dari arah Bumi Sriwijaya mulai dari 250 ribu rupiah. Harga tiket tersebut sudah termasuk antar jemput penumpang dan perjalanan via jalan tol Trans Sumatera. Anda sudah tidak repot lagi mencari transportasi, cukup menunggu dirumah  kami akan menjemput anda dan kami antar ke alamat rumah tujuan. Inilah harga tiket kami secara lengkap.\r\n\r\n\r\n\r\nKota asal\r\nKota tujuan\r\nHarga tiket via tol\r\n\r\n\r\nPalembang\r\nBandarLampung\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol pematang\r\nRp. 200.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Way Kenanga\r\nRp. 200.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Lambu Kibang\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nBranti\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Menggala\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Gunumg Batin\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Terbanggi\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nBandar Jaya\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nWates\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nTegineneng\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nMetro Kota\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nNatar\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nPringsewu kota\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nBakauheni\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nKedondong\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nGading Rejo\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nPagelaran\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nBerhen\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nTanjung Bintang\r\nRp. 350.000\r\n\r\n\r\n\r\n\r\nUnit kendaraan\r\nAdefa Trans memiliki unit kendaraan yang baik dan terawat. Mobil kami siap untuk perjalanan luar kota. Kendaraan kami yaitu  Innova, Hiace, pada travel Palembang Lampung ini. Setiap kendaraan sudah kami tentukan kapasitasnya, jadi tidak ada overload penumpang. Untuk pemberangkatan armada kami rendom, sesuai dengan yang ready apa saat hari keberangkatan itu yang kami berangkat kan.\r\n\r\n\r\n\r\n\r\nArmada\r\n\r\nKapasitas\r\n\r\n\r\n\r\nAvanza\r\n\r\n6 orang\r\n\r\n\r\n\r\nInnova Reborn\r\n\r\n6/7 orang\r\n\r\n\r\n\r\nInnova Grand\r\n\r\n6/ 7 orang\r\n\r\n\r\n\r\nHiace\r\n\r\n12 orang\r\n\r\n\r\n\r\nNav 1\r\n\r\n6 / 7orang\r\n\r\n\r\n\r\nSetiap armada kami dikendarai oleh driver yang sudah berpengalaman di bidangnya, sehingga anda tidak perlu cemas dan  ragu dalam melakukan perjalanan bersama kami. Driver kami akan melayani perjalanan anda dengan semaksimal mungkin sampai di tempat tujuan dengan selamat.  Lalu untuk khusus yang charter, konsumen baru bisa memilih jenis armada yang di inginkan.\r\nArea penjemputan Palembang\r\nBerikut ini kami sertakan informasi mengenai Daerah penjemputan di Kota Palembang, agar konsumen mengetahui bahwa bisa dijemput apabila berada pada salah satu lokasi tersebut dibawah ini. List area jemput tersebut yaitu:\r\n\r\n \tKm 1 s/d km 12, Talang kelapa, Talang jambi, Talang betutu, Talang keramat, Kebun bunga, Sukabangun, Pakjo, Bukit, Demang lebar daun, Kenten, Sako, Pusri, Matamerah, Merah mata, Lemabang, Boom baru, Plaju, Nagaswidak, Tegal binangun, Jakabaring, Soekarno hatta, Musi 2, Gandus, Tangga buntung, Kertapati, Karyajaya Bandara palembang,\r\n\r\nArea pengantaran Bandar Lampung\r\nArea  antaran atau penjemputan di Kota Bandar Lampung bisa dikatakan cukup luas. Agar konsumen bisa memahami maka kami memberikan informasi daftar area jemput dan antar sebagaimana dibawah ini. Cukup sampaikan saja kepada kami saat booking.\r\n\r\n \tTeluk betung, Kota karang, Panjang, Garuntang, Pahoman, Tanjung gading, Tanjung karang, Kemiling, Gedong air, Kedaton, Wayhalim, Waykandis, Tanjung senang, Pasar jatimulyo, Korpri, Itera, Sukarame, Sukabumi, Campang, Kedamaian, Rajabasa, Hajimena, Natar, Branti\r\n\r\nOrder travel Palembang Lampung\r\nPemesanan travel di tempat kami sangatlah mudah. Kami melayani reservasi online. Anda cukup telepon atau WA ke kontak yang telah kami sediakan. Kami siap melayani anda selama 1 x 24 jam tentu dengan jadwal yang sudah ditentukan. Untuk pembayaran tiket pun sangat mudah, anda cukup membayar tiket melalui driver kami saat sudah penjemputan. Atau bisa juga melalui transfer antar bank dengan no rekening yang tercantum dalam Website kami.\r\n\r\n \t\r\n\r\n \tPool Jl. Ksatria sukajaya sukarami Palembang\r\n \tAlamat Jl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung\r\n \tTelp 082186825348\r\n \tWA 082186825348\r\n \tWeb: AdefaTrans.com\r\n\r\n\r\n\r\n\r\n\r\n\r\nTak perlu ragu lagi mencari travel Palembang Lampung dan arah sebaliknya di tempat kami. Adefa Trans memberikan fasilitas mobil ber AC. Kami siap menjadi mitra terbaik dalam perjalanan anda. Kami juga melayani charteran, sewa mobil, paket wisata, dan paket kilat pada jurusan ini, sehingga dapat dikatakan kami merupakan jasa transportasi yang tak hanya terpercaya, namun juga lengkap.","brand":{"@type":"Organization","name":"Adefa Trans"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"6898"},"offers":{"@type":"Offer","price":"50000","priceValidUntil":"2023-12-31T05:20:00+0000","url":"https://adefatrans.com/travel-palembang-lampung/","priceCurrency":"IDR","availability":"InStock"},"review":[{"@type":"Review","author":{"name":"Google Inc","@type":"Person"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Adefa Trans merupakan layanan jasa transportasi yang menjadi solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang. Anda dapat pesan travel untuk jurusan ini dengan cara telepon atau WA ke nomor telepon 082186825348. Dengan layanan jemput dan antar alamat, driver kami siap menjemput dan mengantar hingga alamat tujuan. Hanya dengan tarif 250 ribu untuk via tol. Travel kami pun berangkat setiap  hari dengan jadwal reguler pagi dan malam.\r\n\r\n\r\n\r\nCV. Adefa Group dengan nama perusahaan Adefa Trans bergerak di bidang transportasi yang melayani travel antar jemput. Selain melayani travel Lampung Palembang PP kami juga melayani jurusan lain dari Arah Palembang yaitu menuju, terbanggi, Bandar Jaya, Metro, Tanjung Karang, Pringsewu, Berhen, Tanjung Bintang dan arah sebaliknya PP. Dengan jadwal yang komplit akan sangat membantu anda yang memiliki mobilitas antar kedua kota tersebut.\r\n\r\n\r\n\r\nNama\r\nAdefa Trans\r\n\r\n\r\nLoket\r\nJl. adisucipto &amp; jl.ksatria sukajaya sukarami\r\n\r\n\r\nPool\r\nJl. Ksatria,sukajaya,sukarami,palembang\r\n\r\n\r\nAlamat\r\nJl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung\r\n\r\n\r\nTelp\r\n082186825348\r\n\r\n\r\nWA\r\n082186825348\r\n\r\n\r\nHarga tiket\r\nRp. 250.000\r\n\r\n\r\nFasilitas\r\nAntar jemput, via Tol, AC, reclining seat\r\n\r\n\r\nArmada\r\nAvanza, Innova,\r\n\r\n\r\nRute\r\nPalembang, Indralaya, Kayuagug, terbanggi, Bandar jaya, Metro, Bandar lampung (Pringsewu - Tanjung Bintang - Berhen - Kalianda - Bakauheni)\r\n\r\n\r\nRute\r\n via Jalan Tol trans Sumatra\r\n\r\n\r\nWebsite\r\nadefatrans.com\r\n\r\n\r\n\r\nKami, Adefa Trans punya alamat kantor di Palembang dan di Bandar Lampung. Anda bisa mengunjungi alamat kantor kami baik untuk reservasi semua layanan kami. Karena selain melayani travel reguler, kami juga melayani charter, rental mobil, paket wisata, dan pengiriman barang/ dokumen.\r\n\r\n&nbsp;\r\nJadwal travel Palembang Lampung\r\nAdefa Trans merupakan travel reguler, jadi travel kami berangkat setiap hari. Kami melayani keberangkatan pagi dan malam dari setiap kota asal. Dengan ketersediaan dua jadwal ini, maka penumpang bisa pilih salah satu jadwal yang ada. Informasi lengkap jadwal travel kami antara lain ada di jam setengah sepuluh pagi dan jam tujuh malam.\r\n\r\nSehubungan travel melayani dengan antar jemput, maka tibanya kendaraan di tempat konsumen akan berbeda satu sama lain. Kami pada umumnya akan  menjemput penumpang dengan lokasi terjauh dulu baru menuju ke lokasi yang lebih dekat atau searah dengan jalan menuju ke kota tujuan. Agar lebih paham mengenai jadwal penjemputan yang sama dengan travel Palembang Bakauheni ini, berikut informasi lengkapnya.\r\n\r\n\r\n\r\n\r\ndari Palembang\r\n\r\ndari Lampung\r\n\r\n\r\n\r\n09.30\r\n\r\n09.30\r\n\r\n\r\n\r\n19.00\r\n\r\n19.00\r\n\r\n\r\n\r\nHarga tiket travel\r\nHarga tiket travel kami saat ini dari arah Bumi Sriwijaya mulai dari 250 ribu rupiah. Harga tiket tersebut sudah termasuk antar jemput penumpang dan perjalanan via jalan tol Trans Sumatera. Anda sudah tidak repot lagi mencari transportasi, cukup menunggu dirumah  kami akan menjemput anda dan kami antar ke alamat rumah tujuan. Inilah harga tiket kami secara lengkap.\r\n\r\n\r\n\r\nKota asal\r\nKota tujuan\r\nHarga tiket via tol\r\n\r\n\r\nPalembang\r\nBandarLampung\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol pematang\r\nRp. 200.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Way Kenanga\r\nRp. 200.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Lambu Kibang\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nBranti\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Menggala\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Gunumg Batin\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nGerbang Tol Terbanggi\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nBandar Jaya\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nWates\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nTegineneng\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nMetro Kota\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nNatar\r\nRp. 250.000\r\n\r\n\r\nPalembang\r\nPringsewu kota\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nBakauheni\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nKedondong\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nGading Rejo\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nPagelaran\r\nRp. 350.000\r\n\r\n\r\nPalembang\r\nBerhen\r\nRp. 300.000\r\n\r\n\r\nPalembang\r\nTanjung Bintang\r\nRp. 350.000\r\n\r\n\r\n\r\n\r\nUnit kendaraan\r\nAdefa Trans memiliki unit kendaraan yang baik dan terawat. Mobil kami siap untuk perjalanan luar kota. Kendaraan kami yaitu  Innova, Hiace, pada travel Palembang Lampung ini. Setiap kendaraan sudah kami tentukan kapasitasnya, jadi tidak ada overload penumpang. Untuk pemberangkatan armada kami rendom, sesuai dengan yang ready apa saat hari keberangkatan itu yang kami berangkat kan.\r\n\r\n\r\n\r\n\r\nArmada\r\n\r\nKapasitas\r\n\r\n\r\n\r\nAvanza\r\n\r\n6 orang\r\n\r\n\r\n\r\nInnova Reborn\r\n\r\n6/7 orang\r\n\r\n\r\n\r\nInnova Grand\r\n\r\n6/ 7 orang\r\n\r\n\r\n\r\nHiace\r\n\r\n12 orang\r\n\r\n\r\n\r\nNav 1\r\n\r\n6 / 7orang\r\n\r\n\r\n\r\nSetiap armada kami dikendarai oleh driver yang sudah berpengalaman di bidangnya, sehingga anda tidak perlu cemas dan  ragu dalam melakukan perjalanan bersama kami. Driver kami akan melayani perjalanan anda dengan semaksimal mungkin sampai di tempat tujuan dengan selamat.  Lalu untuk khusus yang charter, konsumen baru bisa memilih jenis armada yang di inginkan.\r\nArea penjemputan Palembang\r\nBerikut ini kami sertakan informasi mengenai Daerah penjemputan di Kota Palembang, agar konsumen mengetahui bahwa bisa dijemput apabila berada pada salah satu lokasi tersebut dibawah ini. List area jemput tersebut yaitu:\r\n\r\n \tKm 1 s/d km 12, Talang kelapa, Talang jambi, Talang betutu, Talang keramat, Kebun bunga, Sukabangun, Pakjo, Bukit, Demang lebar daun, Kenten, Sako, Pusri, Matamerah, Merah mata, Lemabang, Boom baru, Plaju, Nagaswidak, Tegal binangun, Jakabaring, Soekarno hatta, Musi 2, Gandus, Tangga buntung, Kertapati, Karyajaya Bandara palembang,\r\n\r\nArea pengantaran Bandar Lampung\r\nArea  antaran atau penjemputan di Kota Bandar Lampung bisa dikatakan cukup luas. Agar konsumen bisa memahami maka kami memberikan informasi daftar area jemput dan antar sebagaimana dibawah ini. Cukup sampaikan saja kepada kami saat booking.\r\n\r\n \tTeluk betung, Kota karang, Panjang, Garuntang, Pahoman, Tanjung gading, Tanjung karang, Kemiling, Gedong air, Kedaton, Wayhalim, Waykandis, Tanjung senang, Pasar jatimulyo, Korpri, Itera, Sukarame, Sukabumi, Campang, Kedamaian, Rajabasa, Hajimena, Natar, Branti\r\n\r\nOrder travel Palembang Lampung\r\nPemesanan travel di tempat kami sangatlah mudah. Kami melayani reservasi online. Anda cukup telepon atau WA ke kontak yang telah kami sediakan. Kami siap melayani anda selama 1 x 24 jam tentu dengan jadwal yang sudah ditentukan. Untuk pembayaran tiket pun sangat mudah, anda cukup membayar tiket melalui driver kami saat sudah penjemputan. Atau bisa juga melalui transfer antar bank dengan no rekening yang tercantum dalam Website kami.\r\n\r\n \t\r\n\r\n \tPool Jl. Ksatria sukajaya sukarami Palembang\r\n \tAlamat Jl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung\r\n \tTelp 082186825348\r\n \tWA 082186825348\r\n \tWeb: AdefaTrans.com\r\n\r\n\r\n\r\n\r\n\r\n\r\nTak perlu ragu lagi mencari travel Palembang Lampung dan arah sebaliknya di tempat kami. Adefa Trans memberikan fasilitas mobil ber AC. Kami siap menjadi mitra terbaik dalam perjalanan anda. Kami juga melayani charteran, sewa mobil, paket wisata, dan paket kilat pada jurusan ini, sehingga dapat dikatakan kami merupakan jasa transportasi yang tak hanya terpercaya, namun juga lengkap."}]}</script><!-- / Schema optimized by Schema Pro --><!-- breadcrumb Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https:\/\/adefatrans.com\/","name":"Home"}},{"@type":"ListItem","position":2,"item":{"@id":"https:\/\/adefatrans.com\/travel-palembang-lampung\/","name":"Travel Palembang Lampung Antar Jemput 082186825348 Telp\/WA"}}]}</script><!-- / breadcrumb Schema optimized by Schema Pro --><meta name="generator" content="Elementor 3.27.7; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+						<style id="wpsp-style-frontend"></style>
+			<link rel="icon" href="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Favicon-300x300.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Favicon-300x300.png">
+<meta name="msapplication-TileImage" content="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Favicon-300x300.png">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script bis_use="true" type="text/javascript" charset="utf-8" data-bis-config="[&quot;facebook.com/&quot;,&quot;twitter.com/&quot;,&quot;youtube-nocookie.com/embed/&quot;,&quot;//vk.com/&quot;,&quot;//www.vk.com/&quot;,&quot;linkedin.com/&quot;,&quot;//www.linkedin.com/&quot;,&quot;//instagram.com/&quot;,&quot;//www.instagram.com/&quot;,&quot;//www.google.com/recaptcha/api2/&quot;,&quot;//hangouts.google.com/webchat/&quot;,&quot;//www.google.com/calendar/&quot;,&quot;//www.google.com/maps/embed&quot;,&quot;spotify.com/&quot;,&quot;soundcloud.com/&quot;,&quot;//player.vimeo.com/&quot;,&quot;//disqus.com/&quot;,&quot;//tgwidget.com/&quot;,&quot;//js.driftt.com/&quot;,&quot;friends2follow.com&quot;,&quot;/widget&quot;,&quot;login&quot;,&quot;//video.bigmir.net/&quot;,&quot;blogger.com&quot;,&quot;//smartlock.google.com/&quot;,&quot;//keep.google.com/&quot;,&quot;/web.tolstoycomments.com/&quot;,&quot;moz-extension://&quot;,&quot;chrome-extension://&quot;,&quot;/auth/&quot;,&quot;//analytics.google.com/&quot;,&quot;adclarity.com&quot;,&quot;paddle.com/checkout&quot;,&quot;hcaptcha.com&quot;,&quot;recaptcha.net&quot;,&quot;2captcha.com&quot;,&quot;accounts.google.com&quot;,&quot;www.google.com/shopping/customerreviews&quot;,&quot;buy.tinypass.com&quot;,&quot;gstatic.com&quot;,&quot;secureir.ebaystatic.com&quot;,&quot;docs.google.com&quot;,&quot;contacts.google.com&quot;,&quot;github.com&quot;,&quot;mail.google.com&quot;,&quot;chat.google.com&quot;,&quot;audio.xpleer.com&quot;,&quot;keepa.com&quot;,&quot;static.xx.fbcdn.net&quot;,&quot;sas.selleramp.com&quot;,&quot;1plus1.video&quot;,&quot;console.googletagservices.com&quot;,&quot;//lnkd.demdex.net/&quot;,&quot;//radar.cedexis.com/&quot;,&quot;//li.protechts.net/&quot;,&quot;challenges.cloudflare.com/&quot;,&quot;ogs.google.com&quot;,&quot;//www.ukrnafta.com/data/map/&quot;,&quot;//maps.google.com/maps&quot;,&quot;//www.openstreetmap.org/export/embed.html&quot;,&quot;//www.google.com/maps/d/u/3/embed&quot;]" data-dynamic-id="94a0f663-3691-4de4-89a8-40a3a42f3a5a" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/200.js"></script><script bis_use="true" type="text/javascript" charset="utf-8" nonce="" data-dynamic-id="94a0f663-3691-4de4-89a8-40a3a42f3a5a" src="chrome-extension://eppiocemhmnlbhjplcgkofciiegomcon/executors/101.js"></script></head>
+
+<body class="post-template-default single single-post postid-18 single-format-standard wp-custom-logo wp-embed-responsive wp-schema-pro-2.7.2 right-sidebar nav-float-right separate-containers header-aligned-left dropdown-hover featured-image-active elementor-default elementor-kit-1110" itemtype="https://schema.org/Blog" itemscope="" bis_register="W3sibWFzdGVyIjp0cnVlLCJleHRlbnNpb25JZCI6ImVwcGlvY2VtaG1ubGJoanBsY2drb2ZjaWllZ29tY29uIiwiYWRibG9ja2VyU3RhdHVzIjp7IkRJU1BMQVkiOiJlbmFibGVkIiwiRkFDRUJPT0siOiJlbmFibGVkIiwiVFdJVFRFUiI6ImVuYWJsZWQiLCJSRURESVQiOiJlbmFibGVkIiwiUElOVEVSRVNUIjoiZW5hYmxlZCIsIklOU1RBR1JBTSI6ImVuYWJsZWQiLCJUSUtUT0siOiJkaXNhYmxlZCIsIkxJTktFRElOIjoiZW5hYmxlZCIsIkNPTkZJRyI6ImRpc2FibGVkIn0sInZlcnNpb24iOiIyLjAuNDQiLCJzY29yZSI6MjAwNDQwfV0=" __processed_e466bab6-9d27-49fa-80b4-43929bd0eab9__="true">
+	<a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>		<header class="site-header has-inline-mobile-toggle" id="masthead" aria-label="Situs" itemtype="https://schema.org/WPHeader" itemscope="">
+			<div class="inside-header grid-container" bis_skin_checked="1">
+				<div class="site-logo" bis_skin_checked="1">
+					<a href="https://adefatrans.com/" title="Adefa Trans" rel="home">
+						<img fetchpriority="high" class="header-image is-logo-image entered lazyloaded" alt="Adefa Trans" src="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Trans-Logo.png" title="Adefa Trans" width="594" height="298" data-lazy-src="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Trans-Logo.png" data-ll-status="loaded"><noscript><img fetchpriority="high"  class="header-image is-logo-image" alt="Adefa Trans" src="https://adefatrans.com/wp-content/uploads/2025/02/Adefa-Trans-Logo.png" title="Adefa Trans" width="594" height="298" /></noscript>
+					</a>
+				</div>	<nav class="main-navigation mobile-menu-control-wrapper" id="mobile-menu-control-wrapper" aria-label="Toggle Ponsel">
+				<button data-nav="site-navigation" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="screen-reader-text">Menu</span>		</button>
+	</nav>
+			<nav class="main-navigation sub-menu-right" id="site-navigation" aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope="">
+			<div class="inside-navigation grid-container" bis_skin_checked="1">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+					<span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z"></path></svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z"></path></svg></span><span class="mobile-menu">Menu</span>				</button>
+				<div id="primary-menu" class="main-nav" bis_skin_checked="1"><ul id="menu-menu-utama" class=" menu sf-menu"><li id="menu-item-38" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-38"><a href="https://adefatrans.com/">Home</a></li>
+<li id="menu-item-46" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46"><a href="https://adefatrans.com/tentang/">Tentang</a></li>
+<li id="menu-item-680" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-680"><a href="https://adefatrans.com/jurusan/">Jurusan</a></li>
+<li id="menu-item-41" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41"><a href="https://adefatrans.com/harga-tiket/">Harga Tiket</a></li>
+<li id="menu-item-42" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42"><a href="https://adefatrans.com/kontak/">Kontak</a></li>
+</ul></div>			</div>
+		</nav>
+					</div>
+		</header>
+		
+	<div class="site grid-container container hfeed" id="page" bis_skin_checked="1">
+				<div class="site-content" id="content" bis_skin_checked="1">
+			
+	<div class="content-area" id="primary" bis_skin_checked="1">
+		<main class="site-main" id="main">
+			
+<article id="post-18" class="post-18 post type-post status-publish format-standard has-post-thumbnail hentry category-carter category-travel category-travel-lampung-jambi-via-tol category-travel-lampung-palembang category-travel-lampung-palembang-lewat-tol category-travel-palembang category-travel-palembang-lampung-via-tol" itemtype="https://schema.org/CreativeWork" itemscope="">
+	<div class="inside-article" bis_skin_checked="1">
+				<div class="featured-image page-header-image-single grid-container grid-parent" bis_skin_checked="1">
+			<img width="350" height="452" src="https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png" class="attachment-full size-full wp-post-image entered lazyloaded" alt="" itemprop="image" decoding="async" data-lazy-src="https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png" data-ll-status="loaded"><noscript><img width="350" height="452" src="https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-e1661184184740.png" class="attachment-full size-full wp-post-image" alt="" itemprop="image" decoding="async" /></noscript>		</div>
+					<header class="entry-header" aria-label="Konten">
+				<h1 class="entry-title" itemprop="headline">Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA</h1>		<div class="entry-meta" bis_skin_checked="1">
+			<span class="posted-on"><time class="updated" datetime="2024-07-25T19:12:07+07:00" itemprop="dateModified">Juli 25, 2024</time><time class="entry-date published" datetime="2022-02-28T14:15:10+07:00" itemprop="datePublished">Februari 28, 2022</time></span> <span class="byline">oleh <span class="author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope=""><a class="url fn n" href="https://adefatrans.com/author/adefa-trans/" title="Lihat semua tulisan oleh Adefa Trans" rel="author" itemprop="url"><span class="author-name" itemprop="name">Adefa Trans</span></a></span></span> 		</div>
+					</header>
+			
+		<div class="entry-content" itemprop="text" bis_skin_checked="1">
+			<div style="text-align:left" class="yasr-auto-insert-visitor" bis_skin_checked="1"><!--Yasr Visitor Votes Shortcode--><div id="yasr_visitor_votes_b43cc8906c097" class="yasr-visitor-votes" bis_skin_checked="1"><div class="yasr-custom-text-vv-before yasr-custom-text-vv-before-18" bis_skin_checked="1">Click to rate this post!</div><div id="yasr-vv-second-row-container-b43cc8906c097" class="yasr-vv-second-row-container" bis_skin_checked="1"><div id="yasr-visitor-votes-rater-b43cc8906c097" class="yasr-rater-stars-vv yasr-star-rating" data-rater-postid="18" data-rating="4.9" data-rater-starsize="24" data-rater-readonly="false" data-rater-nonce="ca718debd7" data-issingular="true" style="width: 120px; height: 24px; background-size: 24px; cursor: pointer;" bis_skin_checked="1"><div class="yasr-star-value" style="background-size: 24px; width: 98%;" bis_skin_checked="1"></div></div><div class="yasr-vv-stats-text-container" id="yasr-vv-stats-text-container-b43cc8906c097" bis_skin_checked="1"><svg xmlns="https://www.w3.org/2000/svg" width="20" height="20" class="yasr-dashicons-visitor-stats" data-postid="18" id="yasr-stats-dashicon-b43cc8906c097" tabindex="0" style="fill: rgb(34, 34, 34);">
+                                   <path d="M18 18v-16h-4v16h4zM12 18v-11h-4v11h4zM6 18v-8h-4v8h4z"></path>
+                               </svg><span id="yasr-vv-text-container-b43cc8906c097" class="yasr-vv-text-container">[Total: <span id="yasr-vv-votes-number-container-b43cc8906c097">100</span>  Average: <span id="yasr-vv-average-container-b43cc8906c097">4.9</span>]</span></div><div id="yasr-vv-loader-b43cc8906c097" class="yasr-vv-container-loader" bis_skin_checked="1"></div></div><div id="yasr-vv-bottom-container-b43cc8906c097" class="yasr-vv-bottom-container" bis_skin_checked="1"></div></div><!--End Yasr Visitor Votes Shortcode--></div><p>Adefa Trans merupakan layanan jasa transportasi yang menjadi solusi buat anda yang mencari travel Palembang Lampung dan <a href="https://adefatrans.com/travel-bandar-lampung-palembang-via-tol/">travel Lampung Palembang</a>. Anda dapat pesan travel untuk jurusan ini dengan cara telepon atau WA ke nomor telepon <strong>082186825348</strong>. Dengan layanan jemput dan antar alamat, driver kami siap menjemput dan mengantar hingga alamat tujuan. Hanya dengan tarif 250 ribu untuk via tol. Travel kami pun berangkat setiap&nbsp; hari dengan jadwal reguler pagi dan malam.</p>
+<p><img decoding="async" class="wp-image-1652 size-medium aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%20450'%3E%3C/svg%3E" alt="TraveLampung Palembang Via Tol" width="350" height="450" data-lazy-src="https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-232x300.png"><noscript><img decoding="async" class="wp-image-1652 size-medium aligncenter" src="https://adefatrans.com/wp-content/uploads/2022/02/flyer_202208222300471-232x300.png" alt="TraveLampung Palembang Via Tol" width="350" height="450" /></noscript></p>
+<p>CV. Adefa Group dengan nama perusahaan <a href="https://adefatrans.com/">Adefa Trans</a> bergerak di bidang transportasi yang melayani travel antar jemput. Selain melayani <a href="https://adefatrans.com/travel-lampung-palembang/">travel Lampung Palembang</a> PP kami juga melayani jurusan lain dari Arah Palembang yaitu menuju, terbanggi, Bandar Jaya, Metro, Tanjung Karang, Pringsewu, Berhen, Tanjung Bintang dan arah sebaliknya PP. Dengan jadwal yang komplit akan sangat membantu anda yang memiliki mobilitas antar kedua kota tersebut.</p>
+<table>
+<tbody>
+<tr>
+<td width="356">Nama</td>
+<td width="356">Adefa Trans</td>
+</tr>
+<tr>
+<td width="356">Loket</td>
+<td width="356">Jl. adisucipto &amp; jl.ksatria sukajaya sukarami</td>
+</tr>
+<tr>
+<td width="356">Pool</td>
+<td width="356">Jl. Ksatria,sukajaya,sukarami,palembang</td>
+</tr>
+<tr>
+<td width="356">Alamat</td>
+<td width="356">Jl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung</td>
+</tr>
+<tr>
+<td width="356">Telp</td>
+<td width="356"><a href="tel:082186825348"><strong>082186825348</strong></a></td>
+</tr>
+<tr>
+<td width="356">WA</td>
+<td width="356">082186825348</td>
+</tr>
+<tr>
+<td width="356">Harga tiket</td>
+<td width="356">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="356">Fasilitas</td>
+<td width="356">Antar jemput, via Tol, AC, reclining seat</td>
+</tr>
+<tr>
+<td width="356">Armada</td>
+<td width="356">Avanza, Innova,</td>
+</tr>
+<tr>
+<td width="356">Rute</td>
+<td width="356">Palembang, Indralaya, Kayuagug, terbanggi, Bandar jaya, Metro, Bandar lampung (Pringsewu – Tanjung Bintang – Berhen – Kalianda – Bakauheni)</td>
+</tr>
+<tr>
+<td width="356">Rute</td>
+<td width="356">&nbsp;via Jalan Tol trans Sumatra</td>
+</tr>
+<tr>
+<td width="356">Website</td>
+<td width="356"><a href="https://adefatrans.com/">adefatrans.com</a></td>
+</tr>
+</tbody>
+</table>
+<p>Kami, Adefa Trans punya alamat kantor di Palembang dan di Bandar Lampung. Anda bisa mengunjungi alamat kantor kami baik untuk reservasi semua layanan kami. Karena selain melayani travel reguler, kami juga melayani charter, rental mobil, paket wisata, dan pengiriman barang/ dokumen.</p>
+<p>&nbsp;</p>
+<div id="ez-toc-container" class="ez-toc-v2_0_80 counter-hierarchy ez-toc-counter ez-toc-grey ez-toc-container-direction" bis_skin_checked="1">
+<p class="ez-toc-title" style="cursor:inherit">Daftar isi</p>
+<label for="ez-toc-cssicon-toggle-item-6994bc804ae8b" class="ez-toc-cssicon-toggle-label"><span class=""><span class="eztoc-hide" style="display:none;">Toggle</span><span class="ez-toc-icon-toggle-span"><svg style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg" class="list-377408" width="20px" height="20px" viewBox="0 0 24 24" fill="none"><path d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z" fill="currentColor"></path></svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" version="1.2" baseProfile="tiny"><path d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z"></path></svg></span></span></label><input type="checkbox" id="ez-toc-cssicon-toggle-item-6994bc804ae8b" aria-label="Toggle"><nav><ul class="ez-toc-list ez-toc-list-level-1 "><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-1" href="#Jadwal_travel_Palembang_Lampung">Jadwal travel Palembang Lampung</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-2" href="#Harga_tiket_travel">Harga tiket travel</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-3" href="#Unit_kendaraan">Unit kendaraan</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-4" href="#Area_penjemputan_Palembang">Area penjemputan Palembang</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-5" href="#Area_pengantaran_Bandar_Lampung">Area pengantaran Bandar Lampung</a></li><li class="ez-toc-page-1 ez-toc-heading-level-2"><a class="ez-toc-link ez-toc-heading-6" href="#Order_travel_Palembang_Lampung">Order travel Palembang Lampung</a></li></ul></nav></div>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Jadwal_travel_Palembang_Lampung"></span>Jadwal travel Palembang Lampung<span class="ez-toc-section-end"></span></h2>
+<p>Adefa Trans merupakan travel reguler, jadi travel kami berangkat setiap hari. Kami melayani keberangkatan pagi dan malam dari setiap kota asal. Dengan ketersediaan dua jadwal ini, maka penumpang bisa pilih salah satu jadwal yang ada.&nbsp;Informasi lengkap jadwal travel kami antara lain ada di jam setengah sepuluh pagi dan jam tujuh malam.</p>
+<p>Sehubungan travel melayani dengan antar jemput, maka tibanya kendaraan di tempat konsumen akan berbeda satu sama lain. Kami pada umumnya akan&nbsp; menjemput penumpang dengan lokasi terjauh dulu baru menuju ke lokasi yang lebih dekat atau searah dengan jalan menuju ke kota tujuan. Agar lebih paham mengenai jadwal penjemputan yang sama dengan <a href="https://adefatrans.com/travel-palembang-bakauheni/">travel Palembang Bakauhen</a>i ini, berikut informasi lengkapnya.</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<th scope="col" width="151">
+<div align="center" bis_skin_checked="1">dari Palembang</div>
+</th>
+<th scope="col" width="151">
+<div align="center" bis_skin_checked="1">dari Lampung</div>
+</th>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">09.30</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">09.30</div>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">19.00</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">19.00</div>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Harga_tiket_travel"></span>Harga tiket travel<span class="ez-toc-section-end"></span></h2>
+<p>Harga tiket travel kami saat ini dari arah Bumi Sriwijaya mulai dari 250 ribu rupiah. Harga tiket tersebut sudah termasuk antar jemput penumpang dan perjalanan via jalan tol Trans Sumatera. Anda sudah tidak repot lagi mencari transportasi, cukup menunggu dirumah&nbsp; kami akan menjemput anda dan kami antar ke alamat rumah tujuan. Inilah <a href="https://adefatrans.com/harga-tiket/">harga tiket</a> kami secara lengkap.</p>
+<table>
+<tbody>
+<tr>
+<td width="189"><strong><b>Kota asal</b></strong></td>
+<td width="189"><strong><b>Kota tujuan</b></strong></td>
+<td width="189"><strong><b>Harga tiket via tol</b></strong></td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">BandarLampung</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gerbang Tol pematang</td>
+<td width="189">Rp. 200.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gerbang Tol Way Kenanga</td>
+<td width="189">Rp. 200.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gerbang Tol Lambu Kibang</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Branti</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gerbang Tol Menggala</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gerbang Tol Gunumg Batin</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gerbang Tol Terbanggi</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Bandar Jaya</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Wates</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Tegineneng</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Metro Kota</td>
+<td width="189">Rp. 300.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Natar</td>
+<td width="189">Rp. 250.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Pringsewu kota</td>
+<td width="189">Rp. 300.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Bakauheni</td>
+<td width="189">Rp. 350.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Kedondong</td>
+<td width="189">Rp. 350.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Gading Rejo</td>
+<td width="189">Rp. 300.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Pagelaran</td>
+<td width="189">Rp. 350.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Berhen</td>
+<td width="189">Rp. 300.000</td>
+</tr>
+<tr>
+<td width="189">Palembang</td>
+<td width="189">Tanjung Bintang</td>
+<td width="189">Rp. 350.000</td>
+</tr>
+</tbody>
+</table>
+<h2></h2>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Unit_kendaraan"></span>Unit kendaraan<span class="ez-toc-section-end"></span></h2>
+<p>Adefa Trans memiliki unit kendaraan yang baik dan terawat. Mobil kami siap untuk perjalanan luar kota. Kendaraan kami yaitu&nbsp; Innova, Hiace, pada <a href="https://adefatrans.com/travel-palembang-lampung/">travel Palembang Lampung</a> ini. Setiap kendaraan sudah kami tentukan kapasitasnya, jadi tidak ada overload penumpang. Untuk pemberangkatan armada kami rendom, sesuai dengan yang ready apa saat hari keberangkatan itu yang kami berangkat kan.</p>
+<table style="width: 100%;" border="1">
+<tbody>
+<tr>
+<th scope="col" width="151">
+<div align="center" bis_skin_checked="1">Armada</div>
+</th>
+<th scope="col" width="151">
+<div align="center" bis_skin_checked="1">Kapasitas</div>
+</th>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">Avanza</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">6 orang</div>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">Innova Reborn</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">6/7 orang</div>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">Innova Grand</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">6/ 7 orang</div>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">Hiace</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">12 orang</div>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">Nav 1</div>
+</td>
+<td>
+<div style="text-align: center;" bis_skin_checked="1">6 / 7orang</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Setiap armada kami dikendarai oleh driver yang sudah berpengalaman di bidangnya, sehingga anda tidak perlu cemas dan&nbsp; ragu dalam melakukan perjalanan bersama kami. Driver kami akan melayani perjalanan anda dengan semaksimal mungkin sampai di tempat tujuan dengan selamat. &nbsp;Lalu untuk khusus yang charter, konsumen baru bisa memilih jenis armada yang di inginkan.</p>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Area_penjemputan_Palembang"></span>Area penjemputan Palembang<span class="ez-toc-section-end"></span></h2>
+<p>Berikut ini kami sertakan informasi mengenai Daerah penjemputan di Kota Palembang, agar konsumen mengetahui bahwa bisa dijemput apabila berada pada salah satu lokasi tersebut dibawah ini. List area jemput tersebut yaitu:</p>
+<ul>
+<li>Km 1 s/d km 12, Talang kelapa, Talang jambi, Talang betutu, Talang keramat, Kebun bunga, Sukabangun, Pakjo, Bukit, Demang lebar daun, Kenten, Sako, Pusri, Matamerah, Merah mata, Lemabang, Boom baru, Plaju, Nagaswidak, Tegal binangun, Jakabaring, Soekarno hatta, Musi 2, Gandus, Tangga buntung, Kertapati, Karyajaya Bandara palembang,</li>
+</ul>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Area_pengantaran_Bandar_Lampung"></span>Area pengantaran Bandar Lampung<span class="ez-toc-section-end"></span></h2>
+<p>Area&nbsp; antaran atau penjemputan di Kota Bandar Lampung bisa dikatakan cukup luas. Agar konsumen bisa memahami maka kami memberikan informasi daftar area jemput dan antar sebagaimana dibawah ini. Cukup sampaikan saja kepada kami saat booking.</p>
+<ul>
+<li>Teluk betung, Kota karang, Panjang, Garuntang, Pahoman, Tanjung gading, Tanjung karang, Kemiling, Gedong air, Kedaton, Wayhalim, Waykandis, Tanjung senang, Pasar jatimulyo, Korpri, Itera, Sukarame, Sukabumi, Campang, Kedamaian, Rajabasa, Hajimena, Natar, Branti</li>
+</ul>
+<h2 style="text-align: center;"><span class="ez-toc-section" id="Order_travel_Palembang_Lampung"></span>Order travel Palembang Lampung<span class="ez-toc-section-end"></span></h2>
+<p>Pemesanan travel di tempat kami sangatlah mudah. Kami melayani reservasi online. Anda cukup telepon atau WA ke <a href="https://adefatrans.com/kontak/">kontak</a> yang telah kami sediakan. Kami siap melayani anda selama 1 x 24 jam tentu dengan jadwal yang sudah ditentukan. Untuk pembayaran tiket pun sangat mudah, anda cukup membayar tiket melalui driver kami saat sudah penjemputan. Atau bisa juga melalui transfer antar bank dengan no rekening yang tercantum dalam Website kami.</p>
+<ul>
+<li style="list-style-type: none;">
+<ul>
+<li>Pool Jl. Ksatria sukajaya sukarami Palembang</li>
+<li>Alamat Jl. Adisucipto no 44 Tanjung karang Timur, Bandar Lampung</li>
+<li>Telp 082186825348</li>
+<li>WA 082186825348</li>
+<li>Web: <a href="https://adefatrans.com/">AdefaTrans.com</a></li>
+</ul>
+</li>
+</ul>
+<p><a href="https://wa.me/6282186825348?text=Halo%20Adefa%20Trans%2C%20saya%20mau%20Pesan%20Tiket%20Travel%20Di%20Adefa%20Trans" bis_size="{&quot;x&quot;:30,&quot;y&quot;:9068,&quot;w&quot;:315,&quot;h&quot;:77,&quot;abs_x&quot;:30,&quot;abs_y&quot;:9068}"><img decoding="async" class="aligncenter" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20284%2077'%3E%3C/svg%3E" alt="" width="284" height="77" data-lazy-src="https://adefatrans.com/wp-content/uploads/2019/02/pesan-via-wa.png" bis_size="{&quot;x&quot;:45,&quot;y&quot;:9068,&quot;w&quot;:284,&quot;h&quot;:77,&quot;abs_x&quot;:45,&quot;abs_y&quot;:9068}" bis_id="bn_1uky97q4yu715a54ti2gxa"><noscript><img loading="lazy" decoding="async" class="aligncenter" src="https://adefatrans.com/wp-content/uploads/2019/02/pesan-via-wa.png" alt="" width="284" height="77" /></noscript></a><a href="tel://082186825348"><br>
+<img decoding="async" class="aligncenter wp-image-578 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20284%2077'%3E%3C/svg%3E" alt="" width="284" height="77" data-lazy-src="https://adefatrans.com/wp-content/uploads/2019/02/telp-kami.png"><noscript><img loading="lazy" decoding="async" class="aligncenter wp-image-578 size-full" src="https://adefatrans.com/wp-content/uploads/2019/02/telp-kami.png" alt="" width="284" height="77" /></noscript></a></p>
+<p>Tak perlu ragu lagi mencari <a href="https://adefatrans.com/travel-bandar-lampung-palembang-via-tol/">travel Palembang Lampung</a> dan arah sebaliknya di tempat kami. Adefa Trans memberikan fasilitas mobil ber AC. Kami siap menjadi mitra terbaik dalam perjalanan anda. Kami juga melayani charteran, sewa mobil, paket wisata, dan paket kilat pada jurusan ini, sehingga dapat dikatakan kami merupakan jasa transportasi yang tak hanya terpercaya, namun juga lengkap.</p>
+<script type="application/ld+json" class="yasr-schema-graph">{"@context":"https:\/\/schema.org\/","@type":"Product","name":"Travel Palembang Lampung Antar Jemput 082186825348 Telp\/WA","description":"Click to rate this post! [Total: 100 Average: 4.9]Adefa Trans merupakan layanan jasa transportasi yang menjadi solusi buat anda yang mencari travel Palembang Lampung dan travel Lampung Palembang. Anda dapat pesan travel untuk jurusan ini dengan cara telepon atau WA ke nomor telepon 082186825348. Dengan layanan jemput dan antar alamat, driver kami siap menjemput dan...","image":{"@type":"ImageObject","url":"https:\/\/adefatrans.com\/wp-content\/uploads\/2022\/02\/flyer_202208222300471-e1661184184740.png","width":0,"height":0},"aggregateRating":{"@type":"AggregateRating","ratingValue":4.9,"ratingCount":100,"bestRating":5,"worstRating":1},"brand":{"@type":"Brand","name":""},"sku":"","":""}</script>		</div>
+
+				<footer class="entry-meta" aria-label="Meta postingan">
+			<span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z"></path></svg></span><span class="screen-reader-text">Kategori </span><a href="https://adefatrans.com/category/carter/" rel="category tag">Carter</a>, <a href="https://adefatrans.com/category/travel/" rel="category tag">Travel</a>, <a href="https://adefatrans.com/category/travel-lampung-jambi-via-tol/" rel="category tag">Travel Lampung Jambi Via Tol</a>, <a href="https://adefatrans.com/category/travel-lampung-palembang/" rel="category tag">Travel Lampung Palembang</a>, <a href="https://adefatrans.com/category/travel-lampung-palembang-lewat-tol/" rel="category tag">Travel Lampung Palembang Lewat Tol</a>, <a href="https://adefatrans.com/category/travel-palembang/" rel="category tag">Travel Palembang</a>, <a href="https://adefatrans.com/category/travel-palembang-lampung-via-tol/" rel="category tag">Travel Palembang Lampung Via Tol</a></span> 		<nav id="nav-below" class="post-navigation" aria-label="Pos Tunggal">
+			<span class="screen-reader-text">Navigasi Tulisan</span>
+
+			<div class="nav-previous" bis_skin_checked="1"><span class="gp-icon icon-arrow-left"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 138.212c0 2.265-1.133 4.813-2.832 6.512L64.276 256.001l111.317 111.277c1.7 1.7 2.832 4.247 2.832 6.513 0 2.265-1.133 4.813-2.832 6.512L161.43 394.46c-1.7 1.7-4.249 2.832-6.514 2.832-2.266 0-4.816-1.133-6.515-2.832L16.407 262.514c-1.699-1.7-2.832-4.248-2.832-6.513 0-2.265 1.133-4.813 2.832-6.512l131.994-131.947c1.7-1.699 4.249-2.831 6.515-2.831 2.265 0 4.815 1.132 6.514 2.831l14.163 14.157c1.7 1.7 2.832 3.965 2.832 6.513z" fill-rule="nonzero"></path></svg></span><span class="prev" title="Sebelumnya"><a href="https://adefatrans.com/travel-palembang-lampung-full-tol/" rel="prev">Travel Palembang Lampung Lewat Full Tol Hanya 250 Ribu</a></span></div><div class="nav-next" bis_skin_checked="1"><span class="gp-icon icon-arrow-right"><svg viewBox="0 0 192 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path d="M178.425 256.001c0 2.266-1.133 4.815-2.832 6.515L43.599 394.509c-1.7 1.7-4.248 2.833-6.514 2.833s-4.816-1.133-6.515-2.833l-14.163-14.162c-1.699-1.7-2.832-3.966-2.832-6.515 0-2.266 1.133-4.815 2.832-6.515l111.317-111.316L16.407 144.685c-1.699-1.7-2.832-4.249-2.832-6.515s1.133-4.815 2.832-6.515l14.163-14.162c1.7-1.7 4.249-2.833 6.515-2.833s4.815 1.133 6.514 2.833l131.994 131.993c1.7 1.7 2.832 4.249 2.832 6.515z" fill-rule="nonzero"></path></svg></span><span class="next" title="Berikut"><a href="https://adefatrans.com/travel-lampung-palembang-tol-2/" rel="next">Travel Lampung Palembang Layanan Arus Mudik Lebaran</a></span></div>		</nav>
+				</footer>
+			</div>
+</article>
+
+			<div class="comments-area" bis_skin_checked="1">
+				<div id="comments" bis_skin_checked="1">
+
+	<h3 class="comments-title">7 pemikiran pada “Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA”</h3>
+		<ol class="comment-list">
+			
+		<li id="comment-20" class="comment even thread-even depth-1">
+			<article class="comment-body" id="div-comment-20" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/d7fc671432e99f58ea39c9acd23e3747?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/d7fc671432e99f58ea39c9acd23e3747?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/d7fc671432e99f58ea39c9acd23e3747?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/d7fc671432e99f58ea39c9acd23e3747?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn">Zavaloka</cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-20">
+									<time datetime="2019-05-27T01:59:20+07:00" itemprop="datePublished">
+										Mei 27, 2019 pada 1:59 am									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>Adefa Trans pilihan tepat untuk perjalanan ke Lampung travel dengan pelayanan terbaik dan armada terbaru</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-20" data-commentid="20" data-postid="18" data-belowelement="div-comment-20" data-respondelement="respond" data-replyto="Balasan untuk Zavaloka" aria-label="Balasan untuk Zavaloka">Balas</a></span>				</div>
+			</article>
+			</li><!-- #comment-## -->
+
+		<li id="comment-50" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article class="comment-body" id="div-comment-50" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/117d92443cc26460fad45518b975a1d8?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/117d92443cc26460fad45518b975a1d8?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/117d92443cc26460fad45518b975a1d8?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/117d92443cc26460fad45518b975a1d8?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn">Azwardi</cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-50">
+									<time datetime="2019-10-13T03:49:19+07:00" itemprop="datePublished">
+										Oktober 13, 2019 pada 3:49 am									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>Utk keberangkatan ke Lampung Minggu malam ini pakai mobil apa ya pak. Terima kasih…Wassalam saya Azwardi</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-50" data-commentid="50" data-postid="18" data-belowelement="div-comment-50" data-respondelement="respond" data-replyto="Balasan untuk Azwardi" aria-label="Balasan untuk Azwardi">Balas</a></span>				</div>
+			</article>
+			<ul class="children">
+
+		<li id="comment-54" class="comment even depth-2">
+			<article class="comment-body" id="div-comment-54" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/95ac4a5bf869760fa88db84e5bbd1659?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/95ac4a5bf869760fa88db84e5bbd1659?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/95ac4a5bf869760fa88db84e5bbd1659?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/95ac4a5bf869760fa88db84e5bbd1659?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn"><a href="https://adefatrans.com" class="url" rel="ugc">adefa trans</a></cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-54">
+									<time datetime="2019-10-29T10:36:16+07:00" itemprop="datePublished">
+										Oktober 29, 2019 pada 10:36 am									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>untuk armada kita lampung palembang pp ( avanza, xenia , innova )<br>
+untuk lampung jakarta pp ( hiace, traffelo, elff )</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-54" data-commentid="54" data-postid="18" data-belowelement="div-comment-54" data-respondelement="respond" data-replyto="Balasan untuk adefa trans" aria-label="Balasan untuk adefa trans">Balas</a></span>				</div>
+			</article>
+			</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-62" class="comment odd alt thread-even depth-1 parent">
+			<article class="comment-body" id="div-comment-62" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/35b714f894ced10fa31fa0fbef369b3e?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/35b714f894ced10fa31fa0fbef369b3e?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/35b714f894ced10fa31fa0fbef369b3e?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/35b714f894ced10fa31fa0fbef369b3e?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn">Denj prabowo</cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-62">
+									<time datetime="2019-11-25T09:40:18+07:00" itemprop="datePublished">
+										November 25, 2019 pada 9:40 am									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>Mau tanya kalo dari palembang ke bakahueni lampung lewat jalan tol apa nggak ya kak?</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-62" data-commentid="62" data-postid="18" data-belowelement="div-comment-62" data-respondelement="respond" data-replyto="Balasan untuk Denj prabowo" aria-label="Balasan untuk Denj prabowo">Balas</a></span>				</div>
+			</article>
+			<ul class="children">
+
+		<li id="comment-66" class="comment byuser comment-author-adefa-trans bypostauthor even depth-2">
+			<article class="comment-body" id="div-comment-66" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/938c00b78f7ea4008e76c4d1d91b5ae4?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/938c00b78f7ea4008e76c4d1d91b5ae4?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/938c00b78f7ea4008e76c4d1d91b5ae4?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/938c00b78f7ea4008e76c4d1d91b5ae4?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn"><a href="https://adefatrans.com/" class="url" rel="ugc">Adefa Trans</a></cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-66">
+									<time datetime="2019-12-27T08:57:42+07:00" itemprop="datePublished">
+										Desember 27, 2019 pada 8:57 am									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>lewat tol</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-66" data-commentid="66" data-postid="18" data-belowelement="div-comment-66" data-respondelement="respond" data-replyto="Balasan untuk Adefa Trans" aria-label="Balasan untuk Adefa Trans">Balas</a></span>				</div>
+			</article>
+			</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+
+		<li id="comment-68" class="comment odd alt thread-odd thread-alt depth-1">
+			<article class="comment-body" id="div-comment-68" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/772bf8d4b8a52d8b73397a5c5edf699b?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/772bf8d4b8a52d8b73397a5c5edf699b?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/772bf8d4b8a52d8b73397a5c5edf699b?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/772bf8d4b8a52d8b73397a5c5edf699b?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn">Virday</cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-68">
+									<time datetime="2020-01-31T04:04:58+07:00" itemprop="datePublished">
+										Januari 31, 2020 pada 4:04 am									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>Informasi travel yang cukup membantu, saya bookmark dulu Kak 🙂</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-68" data-commentid="68" data-postid="18" data-belowelement="div-comment-68" data-respondelement="respond" data-replyto="Balasan untuk Virday" aria-label="Balasan untuk Virday">Balas</a></span>				</div>
+			</article>
+			</li><!-- #comment-## -->
+
+		<li id="comment-111" class="comment even thread-even depth-1">
+			<article class="comment-body" id="div-comment-111" itemtype="https://schema.org/Comment" itemscope="">
+				<footer class="comment-meta" aria-label="Meta komentar">
+					<img alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" data-lazy-srcset="https://secure.gravatar.com/avatar/49c80e0dafe90133ab4ad9713b2b023b?s=100&amp;d=wavatar&amp;r=g 2x" class="avatar avatar-50 photo" height="50" width="50" decoding="async" data-lazy-src="https://secure.gravatar.com/avatar/49c80e0dafe90133ab4ad9713b2b023b?s=50&amp;d=wavatar&amp;r=g"><noscript><img alt='' src='https://secure.gravatar.com/avatar/49c80e0dafe90133ab4ad9713b2b023b?s=50&#038;d=wavatar&#038;r=g' srcset='https://secure.gravatar.com/avatar/49c80e0dafe90133ab4ad9713b2b023b?s=100&#038;d=wavatar&#038;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' decoding='async'/></noscript>					<div class="comment-author-info" bis_skin_checked="1">
+						<div class="comment-author vcard" itemprop="author" itemtype="https://schema.org/Person" itemscope="" bis_skin_checked="1">
+							<cite itemprop="name" class="fn">Rosa</cite>						</div>
+
+													<div class="entry-meta comment-metadata" bis_skin_checked="1">
+								<a href="https://adefatrans.com/travel-palembang-lampung/#comment-111">
+									<time datetime="2022-05-04T20:37:27+07:00" itemprop="datePublished">
+										Mei 4, 2022 pada 8:37 pm									</time>
+								</a>
+															</div>
+												</div>
+
+									</footer>
+
+				<div class="comment-content" itemprop="text" bis_skin_checked="1">
+					<p>Ke palembang kota dari simpang penawar tulang bawang lampung berapa ya</p>
+<span class="reply"><a rel="nofollow" class="comment-reply-link" href="#comment-111" data-commentid="111" data-postid="18" data-belowelement="div-comment-111" data-respondelement="respond" data-replyto="Balasan untuk Rosa" aria-label="Balasan untuk Rosa">Balas</a></span>				</div>
+			</article>
+			</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+			<div id="respond" class="comment-respond" bis_skin_checked="1">
+		<h3 id="reply-title" class="comment-reply-title">Tinggalkan komentar <small><a rel="nofollow" id="cancel-comment-reply-link" href="/travel-palembang-lampung/#respond" style="display:none;">Batalkan balasan</a></small></h3><form action="https://adefatrans.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate=""><p class="comment-form-comment"><label for="comment" class="screen-reader-text">Komentar</label><textarea id="comment" name="comment" cols="45" rows="8" required=""></textarea></p><label for="author" class="screen-reader-text">Nama</label><input placeholder="Nama *" id="author" name="author" type="text" value="" size="30" required="">
+<label for="email" class="screen-reader-text">Surel</label><input placeholder="Surel *" id="email" name="email" type="email" value="" size="30" required="">
+<label for="url" class="screen-reader-text">Situs web</label><input placeholder="Situs web" id="url" name="url" type="url" value="" size="30">
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Simpan nama, email, dan situs web saya pada peramban ini untuk komentar saya berikutnya.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Kirim Komentar"> <input type="hidden" name="comment_post_ID" value="18" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7ff7250892"></p><p style="display: none !important;" class="akismet-fields-container" data-prefix="ak_"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="1771695999228"><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+			</div>
+
+					</main>
+	</div>
+
+	<div class="widget-area sidebar is-right-sidebar" id="right-sidebar" bis_skin_checked="1">
+	<div class="inside-right-sidebar" bis_skin_checked="1">
+		<aside id="text-4" class="widget inner-padding widget_text"><h2 class="widget-title">Customer Service</h2>			<div class="textwidget" bis_skin_checked="1"><p><img decoding="async" class="aligncenter size-full wp-image-47 entered lazyloaded" src="https://adefatrans.com/wp-content/uploads/2019/10/customer-service.jpg" alt="customer-service" width="100%" height="100%" data-lazy-src="https://adefatrans.com/wp-content/uploads/2019/10/customer-service.jpg" data-ll-status="loaded"><noscript><img decoding="async" class="aligncenter size-full wp-image-47" src="https://adefatrans.com/wp-content/uploads/2019/10/customer-service.jpg" alt="customer-service" width="100%" height="100%" /></noscript></p>
+</div>
+		</aside><aside id="text-5" class="widget inner-padding widget_text">			<div class="textwidget" bis_skin_checked="1"><p>WA:&nbsp;</p>
+</div>
+		</aside><aside id="text-6" class="widget inner-padding widget_text">			<div class="textwidget" bis_skin_checked="1"><p>Telp: <a href="tel://082186825348"><strong>0821 8682 5348</strong></a></p>
+</div>
+		</aside><aside id="recent-comments-2" class="widget inner-padding widget_recent_comments"><h2 class="widget-title">Komentar Terbaru</h2><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href="http://canadianonlinepharmacy.net/" class="url" rel="ugc external nofollow">MarcosRek</a></span> pada <a href="https://adefatrans.com/carter-mobil-lampung-ke-jakarta/#comment-5069">Carter Mobil Lampung ke Jakarta – WA: 082186825348</a></li><li class="recentcomments"><span class="comment-author-link">Tik2thydeask</span> pada <a href="https://adefatrans.com/carter-mobil-lampung-ke-jakarta/#comment-1317">Carter Mobil Lampung ke Jakarta – WA: 082186825348</a></li><li class="recentcomments"><span class="comment-author-link">Rosa</span> pada <a href="https://adefatrans.com/travel-palembang-lampung/#comment-111">Travel Palembang Lampung Antar Jemput 082186825348 Telp/WA</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://adefatrans.com/" class="url" rel="ugc">Adefa Trans</a></span> pada <a href="https://adefatrans.com/travel-bandar-lampung-palembang-via-tol/#comment-104">Travel Bandar Lampung Palembang via Tol</a></li><li class="recentcomments"><span class="comment-author-link"><a href="https://adefatrans.com/" class="url" rel="ugc">Adefa Trans</a></span> pada <a href="https://adefatrans.com/travel-bandar-lampung-palembang-via-tol/#comment-103">Travel Bandar Lampung Palembang via Tol</a></li></ul></aside><aside id="archives-2" class="widget inner-padding widget_archive"><h2 class="widget-title">Arsip</h2>		<label class="screen-reader-text" for="archives-dropdown-2">Arsip</label>
+		<select id="archives-dropdown-2" name="archive-dropdown">
+			
+			<option value="">Pilih Bulan</option>
+				<option value="https://adefatrans.com/2026/01/"> Januari 2026 </option>
+	<option value="https://adefatrans.com/2025/12/"> Desember 2025 </option>
+	<option value="https://adefatrans.com/2025/11/"> November 2025 </option>
+	<option value="https://adefatrans.com/2025/10/"> Oktober 2025 </option>
+	<option value="https://adefatrans.com/2025/09/"> September 2025 </option>
+	<option value="https://adefatrans.com/2025/08/"> Agustus 2025 </option>
+	<option value="https://adefatrans.com/2025/07/"> Juli 2025 </option>
+	<option value="https://adefatrans.com/2025/06/"> Juni 2025 </option>
+	<option value="https://adefatrans.com/2025/05/"> Mei 2025 </option>
+	<option value="https://adefatrans.com/2025/04/"> April 2025 </option>
+	<option value="https://adefatrans.com/2025/03/"> Maret 2025 </option>
+	<option value="https://adefatrans.com/2025/01/"> Januari 2025 </option>
+	<option value="https://adefatrans.com/2024/12/"> Desember 2024 </option>
+	<option value="https://adefatrans.com/2024/10/"> Oktober 2024 </option>
+	<option value="https://adefatrans.com/2024/09/"> September 2024 </option>
+	<option value="https://adefatrans.com/2024/08/"> Agustus 2024 </option>
+	<option value="https://adefatrans.com/2024/07/"> Juli 2024 </option>
+	<option value="https://adefatrans.com/2024/05/"> Mei 2024 </option>
+	<option value="https://adefatrans.com/2024/03/"> Maret 2024 </option>
+	<option value="https://adefatrans.com/2024/01/"> Januari 2024 </option>
+	<option value="https://adefatrans.com/2023/12/"> Desember 2023 </option>
+	<option value="https://adefatrans.com/2023/11/"> November 2023 </option>
+	<option value="https://adefatrans.com/2023/10/"> Oktober 2023 </option>
+	<option value="https://adefatrans.com/2023/08/"> Agustus 2023 </option>
+	<option value="https://adefatrans.com/2023/06/"> Juni 2023 </option>
+	<option value="https://adefatrans.com/2023/04/"> April 2023 </option>
+	<option value="https://adefatrans.com/2023/03/"> Maret 2023 </option>
+	<option value="https://adefatrans.com/2023/02/"> Februari 2023 </option>
+	<option value="https://adefatrans.com/2023/01/"> Januari 2023 </option>
+	<option value="https://adefatrans.com/2022/11/"> November 2022 </option>
+	<option value="https://adefatrans.com/2022/10/"> Oktober 2022 </option>
+	<option value="https://adefatrans.com/2022/09/"> September 2022 </option>
+	<option value="https://adefatrans.com/2022/08/"> Agustus 2022 </option>
+	<option value="https://adefatrans.com/2022/07/"> Juli 2022 </option>
+	<option value="https://adefatrans.com/2022/04/"> April 2022 </option>
+	<option value="https://adefatrans.com/2022/02/"> Februari 2022 </option>
+	<option value="https://adefatrans.com/2021/12/"> Desember 2021 </option>
+	<option value="https://adefatrans.com/2021/11/"> November 2021 </option>
+	<option value="https://adefatrans.com/2021/10/"> Oktober 2021 </option>
+	<option value="https://adefatrans.com/2021/09/"> September 2021 </option>
+	<option value="https://adefatrans.com/2021/08/"> Agustus 2021 </option>
+	<option value="https://adefatrans.com/2021/07/"> Juli 2021 </option>
+	<option value="https://adefatrans.com/2021/06/"> Juni 2021 </option>
+	<option value="https://adefatrans.com/2021/05/"> Mei 2021 </option>
+	<option value="https://adefatrans.com/2021/04/"> April 2021 </option>
+	<option value="https://adefatrans.com/2021/03/"> Maret 2021 </option>
+	<option value="https://adefatrans.com/2021/02/"> Februari 2021 </option>
+	<option value="https://adefatrans.com/2021/01/"> Januari 2021 </option>
+	<option value="https://adefatrans.com/2020/12/"> Desember 2020 </option>
+	<option value="https://adefatrans.com/2020/10/"> Oktober 2020 </option>
+	<option value="https://adefatrans.com/2020/09/"> September 2020 </option>
+	<option value="https://adefatrans.com/2020/07/"> Juli 2020 </option>
+	<option value="https://adefatrans.com/2020/05/"> Mei 2020 </option>
+	<option value="https://adefatrans.com/2020/04/"> April 2020 </option>
+	<option value="https://adefatrans.com/2020/03/"> Maret 2020 </option>
+	<option value="https://adefatrans.com/2020/02/"> Februari 2020 </option>
+	<option value="https://adefatrans.com/2020/01/"> Januari 2020 </option>
+	<option value="https://adefatrans.com/2019/11/"> November 2019 </option>
+	<option value="https://adefatrans.com/2019/10/"> Oktober 2019 </option>
+	<option value="https://adefatrans.com/2019/09/"> September 2019 </option>
+	<option value="https://adefatrans.com/2019/08/"> Agustus 2019 </option>
+	<option value="https://adefatrans.com/2019/06/"> Juni 2019 </option>
+	<option value="https://adefatrans.com/2019/05/"> Mei 2019 </option>
+	<option value="https://adefatrans.com/2019/04/"> April 2019 </option>
+	<option value="https://adefatrans.com/2019/03/"> Maret 2019 </option>
+
+		</select>
+
+			<script>
+(function() {
+	var dropdown = document.getElementById( "archives-dropdown-2" );
+	function onSelectChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value !== '' ) {
+			document.location.href = this.options[ this.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onSelectChange;
+})();
+</script>
+</aside><aside id="categories-2" class="widget inner-padding widget_categories"><h2 class="widget-title">Kategori</h2><form action="https://adefatrans.com" method="get"><label class="screen-reader-text" for="cat">Kategori</label><select name="cat" id="cat" class="postform">
+	<option value="-1">Pilih Kategori</option>
+	<option class="level-0" value="27">Carter</option>
+	<option class="level-0" value="26">Travel</option>
+	<option class="level-0" value="34">Travel Lampung Jambi Via Tol</option>
+	<option class="level-0" value="31">Travel Lampung Palembang</option>
+	<option class="level-0" value="33">Travel Lampung Palembang Lewat Tol</option>
+	<option class="level-0" value="39">Travel Lampung Palembang Via Tol</option>
+	<option class="level-0" value="30">Travel Palembang</option>
+	<option class="level-0" value="35">Travel palembang lampung lewat tol</option>
+	<option class="level-0" value="32">Travel Palembang Lampung Via Tol</option>
+</select>
+</form><script>
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+</script>
+</aside><aside id="custom_html-2" class="widget_text widget inner-padding widget_custom_html"><div class="textwidget custom-html-widget" bis_skin_checked="1"></div></aside>	</div>
+</div>
+
+	</div>
+</div>
+
+
+<div class="site-footer" bis_skin_checked="1">
+				<div id="footer-widgets" class="site footer-widgets" bis_skin_checked="1">
+				<div class="footer-widgets-container grid-container" bis_skin_checked="1">
+					<div class="inside-footer-widgets" bis_skin_checked="1">
+							<div class="footer-widget-1" bis_skin_checked="1">
+		<aside id="text-3" class="widget inner-padding widget_text"><h2 class="widget-title">Kontak Kami</h2>			<div class="textwidget" bis_skin_checked="1"><br><b>Alamat</b>: Jalan Adisucipto no 44 tanjung karang timur, Bandar Lampung
+<br>
+<b>Alamat</b>: Jl Ksatria Sukajaya Sukarami Palembang
+<br>
+WA:&nbsp;
+<br>
+Telp: <a href="tel://082186825348">0821 8682 5348</a>
+<br>
+Email: adefatrans@gmail.com
+<br>
+</div>
+		</aside>	</div>
+		<div class="footer-widget-2" bis_skin_checked="1">
+		<aside id="nav_menu-2" class="widget inner-padding widget_nav_menu"><h2 class="widget-title">Tautan</h2><div class="menu-menu-footer-container" bis_skin_checked="1"><ul id="menu-menu-footer" class="menu"><li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-51"><a rel="privacy-policy" href="https://adefatrans.com/privacy-policy/">Privacy</a></li>
+<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://adefatrans.com/disclaimer/">Disclaimer</a></li>
+<li id="menu-item-47" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-47"><a href="https://adefatrans.com/disclosure/">Disclosure</a></li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://adefatrans.com/sitemap/">Sitemap</a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://adefatrans.com/link/">Link</a></li>
+</ul></div></aside>	</div>
+		<div class="footer-widget-3" bis_skin_checked="1">
+			</div>
+						</div>
+				</div>
+			</div>
+					<footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope="">
+			<div class="inside-site-info grid-container" bis_skin_checked="1">
+								<div class="copyright-bar" bis_skin_checked="1">
+					<span class="copyright">© 2026 Adefa Trans</span> • Dibangun dengan <a href="https://generatepress.com" itemprop="url">GeneratePress</a>				</div>
+			</div>
+		</footer>
+		</div>
+
+<script id="generate-a11y">!function(){"use strict";if("querySelector"in document&&"addEventListener"in window){var e=document.body;e.addEventListener("mousedown",function(){e.classList.add("using-mouse")}),e.addEventListener("keydown",function(){e.classList.remove("using-mouse")})}}();</script>			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script type="text/javascript">
+		/* MonsterInsights Scroll Tracking */
+		if ( typeof(jQuery) !== 'undefined' ) {
+		jQuery( document ).ready(function(){
+		function monsterinsights_scroll_tracking_load() {
+		if ( ( typeof(__gaTracker) !== 'undefined' && __gaTracker && __gaTracker.hasOwnProperty( "loaded" ) && __gaTracker.loaded == true ) || ( typeof(__gtagTracker) !== 'undefined' && __gtagTracker ) ) {
+		(function(factory) {
+		factory(jQuery);
+		}(function($) {
+
+		/* Scroll Depth */
+		"use strict";
+		var defaults = {
+		percentage: true
+		};
+
+		var $window = $(window),
+		cache = [],
+		scrollEventBound = false,
+		lastPixelDepth = 0;
+
+		/*
+		* Plugin
+		*/
+
+		$.scrollDepth = function(options) {
+
+		var startTime = +new Date();
+
+		options = $.extend({}, defaults, options);
+
+		/*
+		* Functions
+		*/
+
+		function sendEvent(action, label, scrollDistance, timing) {
+		if ( 'undefined' === typeof MonsterInsightsObject || 'undefined' === typeof MonsterInsightsObject.sendEvent ) {
+		return;
+		}
+			var paramName = action.toLowerCase();
+	var fieldsArray = {
+	send_to: 'G-14QYR20KJ3',
+	non_interaction: true
+	};
+	fieldsArray[paramName] = label;
+
+	if (arguments.length > 3) {
+	fieldsArray.scroll_timing = timing
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	} else {
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	}
+			}
+
+		function calculateMarks(docHeight) {
+		return {
+		'25%' : parseInt(docHeight * 0.25, 10),
+		'50%' : parseInt(docHeight * 0.50, 10),
+		'75%' : parseInt(docHeight * 0.75, 10),
+		/* Cushion to trigger 100% event in iOS */
+		'100%': docHeight - 5
+		};
+		}
+
+		function checkMarks(marks, scrollDistance, timing) {
+		/* Check each active mark */
+		$.each(marks, function(key, val) {
+		if ( $.inArray(key, cache) === -1 && scrollDistance >= val ) {
+		sendEvent('Percentage', key, scrollDistance, timing);
+		cache.push(key);
+		}
+		});
+		}
+
+		function rounded(scrollDistance) {
+		/* Returns String */
+		return (Math.floor(scrollDistance/250) * 250).toString();
+		}
+
+		function init() {
+		bindScrollDepth();
+		}
+
+		/*
+		* Public Methods
+		*/
+
+		/* Reset Scroll Depth with the originally initialized options */
+		$.scrollDepth.reset = function() {
+		cache = [];
+		lastPixelDepth = 0;
+		$window.off('scroll.scrollDepth');
+		bindScrollDepth();
+		};
+
+		/* Add DOM elements to be tracked */
+		$.scrollDepth.addElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.merge(options.elements, elems);
+
+		/* If scroll event has been unbound from window, rebind */
+		if (!scrollEventBound) {
+		bindScrollDepth();
+		}
+
+		};
+
+		/* Remove DOM elements currently tracked */
+		$.scrollDepth.removeElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.each(elems, function(index, elem) {
+
+		var inElementsArray = $.inArray(elem, options.elements);
+		var inCacheArray = $.inArray(elem, cache);
+
+		if (inElementsArray != -1) {
+		options.elements.splice(inElementsArray, 1);
+		}
+
+		if (inCacheArray != -1) {
+		cache.splice(inCacheArray, 1);
+		}
+
+		});
+
+		};
+
+		/*
+		* Throttle function borrowed from:
+		* Underscore.js 1.5.2
+		* http://underscorejs.org
+		* (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+		* Underscore may be freely distributed under the MIT license.
+		*/
+
+		function throttle(func, wait) {
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		var later = function() {
+		previous = new Date;
+		timeout = null;
+		result = func.apply(context, args);
+		};
+		return function() {
+		var now = new Date;
+		if (!previous) previous = now;
+		var remaining = wait - (now - previous);
+		context = this;
+		args = arguments;
+		if (remaining <= 0) {
+		clearTimeout(timeout);
+		timeout = null;
+		previous = now;
+		result = func.apply(context, args);
+		} else if (!timeout) {
+		timeout = setTimeout(later, remaining);
+		}
+		return result;
+		};
+		}
+
+		/*
+		* Scroll Event
+		*/
+
+		function bindScrollDepth() {
+
+		scrollEventBound = true;
+
+		$window.on('scroll.scrollDepth', throttle(function() {
+		/*
+		* We calculate document and window height on each scroll event to
+		* account for dynamic DOM changes.
+		*/
+
+		var docHeight = $(document).height(),
+		winHeight = window.innerHeight ? window.innerHeight : $window.height(),
+		scrollDistance = $window.scrollTop() + winHeight,
+
+		/* Recalculate percentage marks */
+		marks = calculateMarks(docHeight),
+
+		/* Timing */
+		timing = +new Date - startTime;
+
+		checkMarks(marks, scrollDistance, timing);
+		}, 500));
+
+		}
+
+		init();
+		};
+
+		/* UMD export */
+		return $.scrollDepth;
+
+		}));
+
+		jQuery.scrollDepth();
+		} else {
+		setTimeout(monsterinsights_scroll_tracking_load, 200);
+		}
+		}
+		monsterinsights_scroll_tracking_load();
+		});
+		}
+		/* End MonsterInsights Scroll Tracking */
+		
+</script><link data-minify="1" rel="stylesheet" id="yasrcss-css" href="https://adefatrans.com/wp-content/cache/min/1/wp-content/plugins/yet-another-stars-rating/includes/css/yasr.css?ver=1759889503" media="all">
+<style id="yasrcss-inline-css">
+
+            .yasr-star-rating {
+                background-image: url('https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/img/star_2.svg');
+            }
+            .yasr-star-rating .yasr-star-value {
+                background: url('https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/img/star_3.svg') ;
+            }
+
+            .yasr-star-rating {
+                background-image: url('https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/img/star_2.svg');
+            }
+            .yasr-star-rating .yasr-star-value {
+                background: url('https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/img/star_3.svg') ;
+            }
+</style>
+<!--[if lte IE 11]>
+<script src="https://adefatrans.com/wp-content/themes/generatepress/assets/js/classList.min.js?ver=3.1.3" id="generate-classlist-js"></script>
+<![endif]-->
+<script id="generate-menu-js-extra">
+var generatepressMenu = {"toggleOpenedSubMenus":"1","openSubMenuLabel":"Buka Submenu","closeSubMenuLabel":"Tutup submenu"};
+</script>
+<script src="https://adefatrans.com/wp-content/themes/generatepress/assets/js/menu.min.js?ver=3.1.3" id="generate-menu-js"></script>
+<script src="https://adefatrans.com/wp-includes/js/comment-reply.min.js?ver=6.4.7" id="comment-reply-js" async="" data-wp-strategy="async"></script>
+<script id="yasr-window-var-js-extra">
+var yasrWindowVar = {"siteUrl":"https:\/\/adefatrans.com","adminUrl":"https:\/\/adefatrans.com\/wp-admin\/","ajaxurl":"https:\/\/adefatrans.com\/wp-admin\/admin-ajax.php","visitorStatsEnabled":"yes","ajaxEnabled":"no","loaderHtml":"<div id=\"yasr-loader\" style=\"display: inline-block\">\u00a0 <img src=\"https:\/\/adefatrans.com\/wp-content\/plugins\/yet-another-stars-rating\/includes\/img\/loader.gif\" \r\n                 title=\"yasr-loader\" alt=\"yasr-loader\" height=\"16\" width=\"16\"><\/div>","loaderUrl":"https:\/\/adefatrans.com\/wp-content\/plugins\/yet-another-stars-rating\/includes\/img\/loader.gif","isUserLoggedIn":"false","isRtl":"false","starSingleForm":"\"star\"","starsPluralForm":"\"stars\"","textAfterVr":"\"[Total: %total_count%  Average: %average%]\"","textRating":"\"Rating\"","textLoadRanking":"\"Loading, please wait\"","textVvStats":"\"out of 5 stars\"","textOrderBy":"\"Order by\"","textMostRated":"\"Most Rated\"","textHighestRated":"\"Highest Rated\"","textLeftColumnHeader":"\"Post\""};
+</script>
+<script src="https://adefatrans.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://adefatrans.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/js/yasr-globals.js?ver=3.4.15" id="yasr-global-functions-js"></script>
+<script src="https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/js/tippy.all.min.js?ver=3.6.0" id="tippy-js"></script>
+<script src="https://adefatrans.com/wp-content/plugins/yet-another-stars-rating/includes/js/shortcodes/visitorVotes.js?ver=3.4.15" id="yasr-front-vv-js"></script>
+<script defer="" src="https://adefatrans.com/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1763003784" id="akismet-frontend-js"></script>
+			<script type="text/javascript" id="wpsp-script-frontend"></script>
+			<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="https://adefatrans.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>
+
+
+
+</body></html>
